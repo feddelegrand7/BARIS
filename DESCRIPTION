@@ -14,4 +14,5 @@ imports:
     jsolite,
     memoise, 
     dplyr
-
+URL: https://github.com/feddelegrand7/BARIS
+BugReports: https://github.com/feddelegrand7/BARIS/issues
