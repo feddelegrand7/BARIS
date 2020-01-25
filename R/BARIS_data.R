@@ -31,7 +31,7 @@ BARIS_data <- function() {
 
   deleted            <- df_info$deleted
 
-  nb_views           <- df_info$metrics[[4]]
+  views           <- df_info$metrics[[4]]
 
   organization       <- df_info$organization[[6]]
 
@@ -58,7 +58,7 @@ BARIS_data <- function() {
 
     )
 
-  df_info2 <- as_tibble(df_info2)
+  df_info2 <- dplyr::as_tibble(df_info2)
 
   return(df_info2)
 }
