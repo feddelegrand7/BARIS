@@ -10,7 +10,7 @@
 #'
 #'
 #' @examples
-#' @importFrom jsolite fromJSON
+#' @importFrom jsonlite fromJSON
 #' @importFrom memoise memoise
 #' @importFrom memoise cache_filesystem
 BARIS_set_fromJSON <- function(cache_folder = tempdir()) {

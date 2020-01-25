@@ -11,8 +11,11 @@ Encoding: UTF-8
 LazyData: true
 imports: 
     dplyr,
-    jsolite,
+    jsonlite,
     memoise, 
-    dplyr
+    dplyr,
+    stringr,
+    magrittr
 URL: https://github.com/feddelegrand7/BARIS
 BugReports: https://github.com/feddelegrand7/BARIS/issues
+RoxygenNote: 6.1.1

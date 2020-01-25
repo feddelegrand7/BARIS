@@ -31,7 +31,7 @@ BARIS_data <- function() {
 
   deleted            <- df_info$deleted
 
-  views           <- df_info$metrics[[4]]
+  views              <- df_info$metrics[[4]]
 
   organization       <- df_info$organization[[6]]
 
