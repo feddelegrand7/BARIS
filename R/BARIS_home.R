@@ -6,7 +6,8 @@
 #'
 #' @examples
 #' @importFrom dplyr as_tibble
-BARIS_data <- function() {
+#'
+BARIS_home <- function() {
 
   my_url <- "https://www.data.gouv.fr/api/1/site/home/datasets/"
 
