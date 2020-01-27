@@ -2,6 +2,8 @@
 
 export(BARIS_explain)
 export(BARIS_home)
+export(BARIS_resources)
+export(BARIS_search)
 export(BARIS_set_fromJSON)
 importFrom(dplyr,as_tibble)
 importFrom(jsonlite,fromJSON)
