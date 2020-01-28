@@ -1,18 +1,21 @@
+# Inspired heavily from the simfinR package developed by Marcelo S.Perlin.
 
-
-#' Title
+#' Sets memoise cache function
 #'
-#' @param cache_folder
+#' Uses the memoise package to set a cache function for jsonlite::fromJSON
+#' The choice of the cache folder defines where to save the local files. If not set, will use tempdir()
 #'
-#' @return
+#' @param cache_folder The local folder where to save files
+#'
+#' @return A memoised function
 #' @export
 #'
-#'
-#'
 #' @examples
-#' @importFrom jsonlite fromJSON
-#' @importFrom memoise memoise
-#' @importFrom memoise cache_filesystem
+#' mem_fromJSON <- simfinR_set_fromJSON()
+#'
+
+
+
 BARIS_set_fromJSON <- function(cache_folder = tempdir()) {
 
   mem_fromJSON <- memoise::memoise(jsonlite::fromJSON,

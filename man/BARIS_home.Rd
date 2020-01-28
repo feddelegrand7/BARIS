@@ -2,10 +2,21 @@
 % Please edit documentation in R/BARIS_home.R
 \name{BARIS_home}
 \alias{BARIS_home}
-\title{Title}
+\title{Home Page Datasets}
 \usage{
 BARIS_home()
 }
+\value{
+A dataframe with datasets characteristics
+}
 \description{
-Title
+This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv.fr website.
+}
+\examples{
+\dontrun{
+
+BARIS_home()
+
+}
+
 }

@@ -1,10 +1,18 @@
 
-#' Title
+#' Datasets description
 #'
-#' @return
+#' @description This function provides in French a detailed description of a dataset.
+#' @param datasetId the unique id of a dataset \see{BARIS_search()}
+#'
+#' @return a character string describing a dataset
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#'
+#' BARIS_explain("53699934a3a729239d2051a1")
+#'
+#' }
 #' @importFrom magrittr %>%
 #' @importFrom dplyr as_tibble
 #' @importFrom stringr str_replace_all
@@ -13,10 +21,6 @@
 
 BARIS_explain <- function(datasetId) {
 
-  if(!(is.character(datasetId))){
-
-    stop("Please provide the id as a character element")
-  }
 
   basic_url <- "https://www.data.gouv.fr/api/1/datasets/"
 

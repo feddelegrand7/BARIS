@@ -2,13 +2,22 @@
 % Please edit documentation in R/BARIS_search.R
 \name{BARIS_search}
 \alias{BARIS_search}
-\title{Title}
+\title{Searching for a dataset}
 \usage{
-BARIS_search(query, page = 20)
+BARIS_search(query, n_pages = 20)
 }
 \arguments{
-\item{query}{}
+\item{query}{a character string through which to search}
+
+\item{n_pages}{number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation}
 }
 \description{
-Title
+This function searches specific datasets through the data.gouv API according to the pattern provided into the query argument.
+}
+\examples{
+\dontrun{
+
+BARIS_search("Marseille")
+
+}
 }

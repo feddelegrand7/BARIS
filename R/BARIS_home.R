@@ -1,10 +1,18 @@
 
-#' Title
+#' Home Page Datasets
 #'
-#' @return
+#' @description This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv.fr website.
+#'
+#' @return A dataframe with datasets characteristics
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#'
+#' BARIS_home()
+#'
+#' }
+#'
 #' @importFrom dplyr as_tibble
 #'
 BARIS_home <- function() {

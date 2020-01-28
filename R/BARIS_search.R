@@ -1,13 +1,22 @@
-#' Title
+#' Searching for a dataset
 #'
-#' @param query
+#' @description This function searches specific datasets through the data.gouv API according to the pattern provided into the query argument.
+#'
+#'
+#' @param query a character string through which to search
+#' @param n_pages number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#'
+#' BARIS_search("Marseille")
+#'
+#' }
 #' @importFrom dplyr as_tibble
-BARIS_search <- function(query, page = 20) {
+BARIS_search <- function(query, n_pages = 20) {
 
   base_url <- "https://www.data.gouv.fr/api/1/datasets/?q="
 
@@ -16,7 +25,7 @@ BARIS_search <- function(query, page = 20) {
   complement <- "&page=0&page_size="
 
 
-  size = page
+  size = n_pages
 
   final_url <- paste(base_url, search, complement, size, sep = "")
 

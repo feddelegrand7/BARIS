@@ -2,13 +2,21 @@
 % Please edit documentation in R/memoise.R
 \name{BARIS_set_fromJSON}
 \alias{BARIS_set_fromJSON}
-\title{Title}
+\title{Sets memoise cache function}
 \usage{
 BARIS_set_fromJSON(cache_folder = tempdir())
 }
 \arguments{
-\item{cache_folder}{}
+\item{cache_folder}{The local folder where to save files}
+}
+\value{
+A memoised function
 }
 \description{
-Title
+Uses the memoise package to set a cache function for jsonlite::fromJSON
+The choice of the cache folder defines where to save the local files. If not set, will use tempdir()
+}
+\examples{
+mem_fromJSON <- simfinR_set_fromJSON()
+
 }

@@ -2,10 +2,23 @@
 % Please edit documentation in R/BARIS_explain.R
 \name{BARIS_explain}
 \alias{BARIS_explain}
-\title{Title}
+\title{Datasets description}
 \usage{
 BARIS_explain(datasetId)
 }
+\arguments{
+\item{datasetId}{the unique id of a dataset \see{BARIS_search()}}
+}
+\value{
+a character string describing a dataset
+}
 \description{
-Title
+This function provides in French a detailed description of a dataset.
+}
+\examples{
+\dontrun{
+
+BARIS_explain("53699934a3a729239d2051a1")
+
+}
 }
