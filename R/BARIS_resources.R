@@ -8,7 +8,7 @@
 #' @examples
 #' @importFrom dplyr as_tibble
 #'
-BARIS_resources <- function(id) {
+BARIS_resource <- function(id) {
 
 
   basic_url <- "https://www.data.gouv.fr/api/1/datasets/"
