@@ -15,7 +15,7 @@
 #' @importFrom XML xmlToDataFrame
 #' @importFrom httr BROWSE
 #' @importFrom rgdal readOGR
-
+#' @importFrom janitor clean_names
 
 
 
@@ -31,9 +31,11 @@ BARIS_extract <- function(resourceId, format) {
 
   if(format == "csv" || format == "text" || format == "text/csv" ){
 
-    resource <- data.table::fread(final_url, stringsAsFactors = F, sep = "auto")
-    resource <- dplyr::as_tibble(resource)
-    return(resource)
+    df_csv <- data.table::fread(final_url, stringsAsFactors = F, sep = "auto", encoding = "UTF-8", showProgress = F)
+    df_csv <- dplyr::as_tibble(df_csv)
+
+    df_csv <- janitor::clean_names(df_csv)
+    return(df_csv)
 
   #### Reading Excel files ############################################################
 
@@ -41,9 +43,11 @@ BARIS_extract <- function(resourceId, format) {
   } else if (format == "xls" || format == "xlsx"){
 
 
-    resource <- rio::import(final_url)
+    df_xlsx <- rio::import(final_url)
 
-    return(resource)
+    df_xlsx <- janitor::clean_names(df_xlsx)
+
+    return(df_xlsx)
 
   #### Reading XML files ############################################################
 
@@ -54,6 +58,8 @@ BARIS_extract <- function(resourceId, format) {
     xml_info <- XML::xmlParse(httr::GET(final_url))
 
     xmldf <- XML::xmlToDataFrame(xml_info)
+
+    xmldf <- janitor::clean_names(xmldf)
 
     return(xmldf)
 
@@ -79,14 +85,14 @@ BARIS_extract <- function(resourceId, format) {
   #### Reading PDF files ############################################################
 
 
-  } else if (format == "pdf"){
+  } else if (format == "pdf" || format == "document"){
 
     httr::BROWSE(final_url)
 
   #### Downloading ZIP file ############################################################
 
 
-  } else if (format == "zip"){
+  } else if (format == "zip" || format == "html.zip" ){
 
     httr::BROWSE(final_url)
 
@@ -110,18 +116,22 @@ BARIS_extract <- function(resourceId, format) {
     unlink(c(temp, temp2))
 
 
+  } else if(format == "json") {
+
+    df_json <- jsonlite::fromJSON(final_url)
+
+    df_json <- janitor::clean_names(df_json)
+
+    return(df_json)
+
   } else {
 
-    return("go ahead continue")
+
+    message(cat("Sorry, currently the available extraction capabilities are limited to \n
+      json, csv, xls, xlsx, xml, geojson, and shp files"))
+
+
   }
-
-
-
-
-
-
-
-
 
 
 
