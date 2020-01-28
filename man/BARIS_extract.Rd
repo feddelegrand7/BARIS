@@ -4,7 +4,7 @@
 \alias{BARIS_extract}
 \title{Title}
 \usage{
-BARIS_extract(resourceId)
+BARIS_extract(resourceId, format)
 }
 \description{
 Title

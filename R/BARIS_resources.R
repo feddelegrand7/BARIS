@@ -10,10 +10,6 @@
 #'
 BARIS_resources <- function(id) {
 
-  if(!(is.character(id))){
-
-    stop("Please provide the id as a character element")
-  }
 
   basic_url <- "https://www.data.gouv.fr/api/1/datasets/"
 

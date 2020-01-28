@@ -21,10 +21,6 @@
 
 BARIS_extract <- function(resourceId, format) {
 
-  if(!(is.character(resourceId))){
-
-    stop("Please provide the id as a character element")
-  }
 
   basic_url <- "https://www.data.gouv.fr/fr/datasets/r/"
 
@@ -55,9 +51,9 @@ BARIS_extract <- function(resourceId, format) {
   } else if (format == "xml" ){
 
 
-    xml_info <- XML::xmlParse(final_url)
+    xml_info <- XML::xmlParse(httr::GET(final_url))
 
-    xmldf <- XML::xmlToDataFrame(nodes = getNodeSet(xml_info, "//record"))
+    xmldf <- XML::xmlToDataFrame(xml_info)
 
     return(xmldf)
 
