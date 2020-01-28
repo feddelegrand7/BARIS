@@ -4,7 +4,7 @@
 \alias{BARIS_explain}
 \title{Title}
 \usage{
-BARIS_explain(id)
+BARIS_explain(datasetId)
 }
 \description{
 Title

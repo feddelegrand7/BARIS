@@ -15,7 +15,14 @@ imports:
     memoise, 
     dplyr,
     stringr,
-    magrittr
+    magrittr,
+    data.table,
+    reader,
+    downloader,
+    sf,
+    XML,
+    httr,
+    rgdal
 URL: https://github.com/feddelegrand7/BARIS
 BugReports: https://github.com/feddelegrand7/BARIS/issues
 RoxygenNote: 6.1.1

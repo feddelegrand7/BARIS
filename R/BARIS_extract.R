@@ -18,7 +18,8 @@
 
 
 
-BARIS_CSVextract <- function(resourceId) {
+
+BARIS_extract <- function(resourceId, format) {
 
   if(!(is.character(resourceId))){
 
@@ -27,13 +28,12 @@ BARIS_CSVextract <- function(resourceId) {
 
   basic_url <- "https://www.data.gouv.fr/fr/datasets/r/"
 
-  final_url <- paste("https://www.data.gouv.fr/api/1/datasets/", resourceId, sep = "")
+  final_url <- paste(basic_url, resourceId, sep = "")
 
-  resp <- httr::GET(final_url)
 
   #### Reading CSV files ############################################################
 
-  if(http_type(resp) == "csv" || http_type(resp) == "text" || http_type(resp) == "text/csv" ){
+  if(format == "csv" || format == "text" || format == "text/csv" ){
 
     resource <- data.table::fread(final_url, stringsAsFactors = F, sep = "auto")
     resource <- dplyr::as_tibble(resource)
@@ -42,7 +42,7 @@ BARIS_CSVextract <- function(resourceId) {
   #### Reading Excel files ############################################################
 
 
-  } else if (http_type(resp) == "xls" || http_type(resp) == "xlsx"){
+  } else if (format == "xls" || format == "xlsx"){
 
 
     resource <- rio::import(final_url)
@@ -52,8 +52,7 @@ BARIS_CSVextract <- function(resourceId) {
   #### Reading XML files ############################################################
 
 
-  } else if (http_type(resp) == "xml" ){
-
+  } else if (format == "xml" ){
 
 
     xml_info <- XML::xmlParse(final_url)
@@ -65,7 +64,7 @@ BARIS_CSVextract <- function(resourceId) {
   #### Reading SHP files ############################################################
 
 
-  } else if (http_type(resp) == "shp" || http_type(resp) == "shapefile"){
+  } else if (format == "shp" || format == "shapefile"){
 
     temp <- tempfile()
     temp2 <- tempfile()
@@ -84,21 +83,21 @@ BARIS_CSVextract <- function(resourceId) {
   #### Reading PDF files ############################################################
 
 
-  } else if (http_type(resp) == "pdf"){
+  } else if (format == "pdf"){
 
     httr::BROWSE(final_url)
 
   #### Downloading ZIP file ############################################################
 
 
-  } else if (http_type(resp) == "zip"){
+  } else if (format == "zip"){
 
     httr::BROWSE(final_url)
 
-  #### Downloading GEOJSON file ############################################################
+  #### Downloading GEOJSON file #########################################################
 
 
-  } else if (http_type(resp) == "geojson"){
+  } else if (format == "geojson"){
 
 
     temp <- tempfile()
@@ -115,6 +114,9 @@ BARIS_CSVextract <- function(resourceId) {
     unlink(c(temp, temp2))
 
 
+  } else {
+
+    return("go ahead continue")
   }
 
 
