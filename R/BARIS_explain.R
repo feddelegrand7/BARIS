@@ -2,17 +2,14 @@
 #' Datasets description
 #'
 #' @description This function provides in French a detailed description of a dataset.
-#' @param datasetId the unique id of a dataset \see{BARIS_search()}
+#' @param datasetId the unique id of a dataset
 #'
 #' @return a character string describing a dataset
+#'
+#' @examples \donttest{
+#'
+#' BARIS_explain("53699934a3a729239d2051a1")}
 #' @export
-#'
-#' @examples
-#' \dontrun{
-#'
-#' BARIS_explain("53699934a3a729239d2051a1")
-#'
-#' }
 #' @importFrom magrittr %>%
 #' @importFrom dplyr as_tibble
 #' @importFrom stringr str_replace_all

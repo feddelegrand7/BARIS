@@ -8,12 +8,14 @@
 #' @param cache_folder The local folder where to save files
 #'
 #' @return A memoised function
+#'
+#' @examples \donttest{
+#' mem_fromJSON <- BARIS_set_fromJSON()
+#' }
 #' @export
-#'
-#' @examples
-#' mem_fromJSON <- simfinR_set_fromJSON()
-#'
-
+#' @importFrom memoise memoise
+#' @importFrom memoise cache_filesystem
+#' @importFrom jsonlite fromJSON
 
 
 BARIS_set_fromJSON <- function(cache_folder = tempdir()) {

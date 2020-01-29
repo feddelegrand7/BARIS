@@ -5,16 +5,11 @@
 #'
 #' @param query a character string through which to search
 #' @param n_pages number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation
+#' @return a character string
+#' @examples \donttest{
 #'
-#' @return
+#' BARIS_search("Marseille")}
 #' @export
-#'
-#' @examples
-#' \dontrun{
-#'
-#' BARIS_search("Marseille")
-#'
-#' }
 #' @importFrom dplyr as_tibble
 BARIS_search <- function(query, n_pages = 20) {
 
@@ -79,7 +74,7 @@ BARIS_search <- function(query, n_pages = 20) {
 
   )
 
-  df_info2 <- dplyr::as_tibble(df_info2)
+  df_info2 <- as_tibble(df_info2)
 
   return(df_info2)
 

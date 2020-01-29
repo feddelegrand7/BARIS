@@ -2,13 +2,21 @@
 % Please edit documentation in R/BARIS_resources.R
 \name{BARIS_resources}
 \alias{BARIS_resources}
-\title{Title}
+\title{Displaying resources within a dataset}
 \usage{
-BARIS_resources(id)
+BARIS_resources(datasetId)
 }
 \arguments{
-\item{id}{}
+\item{datasetId}{the unique identifier of a dataset}
+}
+\value{
+a dataframe of all the dataframes (resources) included within a specific dataset and their main characteristics
 }
 \description{
-Title
+The data.gouv API provides access to several datasets in which one can find several individual dataframes to exploit. The BARIS_resources lists all the dataframes available within a specific dataset along with the main information concerning the dataframes.
+}
+\examples{
+\donttest{
+
+BARIS_resources("53699934a3a729239d2051a1")}
 }

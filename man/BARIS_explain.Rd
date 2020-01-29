@@ -7,7 +7,7 @@
 BARIS_explain(datasetId)
 }
 \arguments{
-\item{datasetId}{the unique id of a dataset \see{BARIS_search()}}
+\item{datasetId}{the unique id of a dataset}
 }
 \value{
 a character string describing a dataset
@@ -16,9 +16,7 @@ a character string describing a dataset
 This function provides in French a detailed description of a dataset.
 }
 \examples{
-\dontrun{
+\donttest{
 
-BARIS_explain("53699934a3a729239d2051a1")
-
-}
+BARIS_explain("53699934a3a729239d2051a1")}
 }

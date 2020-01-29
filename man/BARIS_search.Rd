@@ -11,13 +11,14 @@ BARIS_search(query, n_pages = 20)
 
 \item{n_pages}{number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation}
 }
+\value{
+a character string
+}
 \description{
 This function searches specific datasets through the data.gouv API according to the pattern provided into the query argument.
 }
 \examples{
-\dontrun{
+\donttest{
 
-BARIS_search("Marseille")
-
-}
+BARIS_search("Marseille")}
 }
