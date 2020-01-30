@@ -9,17 +9,18 @@
 
 With **BARIS** you can exploit the [French official data
 portal](www.data.gouv.fr) API directly from R. The package offers
-several capabalities, from listing the available datasets to extracting
+several capabilities, from listing the available datasets to extracting
 the needed resources. Nevertheless, there are many functionalities
-offered by the API (e.g. uploading a dataset, removing a resource among
-others) that are not covered in the **BARIS** package which really focus
-on the data analysis aspect of the API. The good news about that is that
-the user doesn’t need an API key or any credential to run the available
-functions provided by **BARIS**. Finally, a distinction has to be made.
-The data.gouv API provides several datasets **which contain** one or
-many dataframes. The unique identifier (ID) of dataset has this form :
-**53699934a3a729239d2051a1** while the ID of an individual dataframe or
-resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**.
+offered by the API (e.g. uploading a dataset, removing a resource …
+among others) that are not covered in the **BARIS** package which
+instead really focus on the data analysis aspect of the API. The good
+news about that is that the user doesn’t need an API key or any
+credential to run the available functions provided by **BARIS**.
+Finally, a distinction has to be made. The data.gouv API provides
+several **datasets which contain one or many dataframes.** The unique
+identifier (ID) of dataset has this form : **53699934a3a729239d2051a1**
+while the ID of an individual dataframe or resource has this form:
+**59ea7bba-f38a-4d75-b85f-2d1955050e53**.
 
 ## Installation
 
@@ -123,9 +124,9 @@ Marseille_data[, c("id", "title")]
 #> 12 53698f14a3a729239d20~ Arrondissements de Marseille                      
 #> 13 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
 #> 14 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
-#> 15 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
-#> 16 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
-#> 17 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
+#> 15 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
+#> 16 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
+#> 17 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
 #> 18 5cebfa8706e3e77ffdb3~ Marseille - Elections départementales             
 #> 19 5cebfa8406e3e77ffdb3~ Marseille - Équipements sportifs                  
 #> 20 5cebfa8706e3e77c78b3~ Marseille - Parcours culturels
@@ -148,7 +149,7 @@ BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 ```
 
 The description is in French but even non-French speakers can use this
-function in conjuction with a translation tool.
+function in conjunction with a translation tool.
 
 ## BARIS\_resources()
 
