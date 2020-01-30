@@ -1,12 +1,12 @@
 Package: BARIS
-Title: What the Package Does (One Line, Title Case)
+Title: Access and Import Data from the French Data Portal data.gouv.fr
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Mohamed El Fodil",
            family = "Ihaddaden",
            role = c("aut", "cre"),
            email = "ihaddaden.fodeil@gmail.com")
-Description: What the package does (one paragraph).
+Description: The BARIS package allows the user to exploit and import data from the rich data.gouv French portal through their API <https://doc.data.gouv.fr/api/reference/>. The portal is free and no credential is required for extracting datasets. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -4,7 +4,7 @@
 #' @description This function read directly into R a specific dataframe (resource) by the mean of its unique ID. Currently, BARIS_extract() can read directly the following types of file : json, csv, xls, xlsx, xml, geojson, and shp.
 #'
 #' @param resourceId the unique identifier of the individual dataframe (resource) to read into R. Not to confound with the global datasets ID that includes many dataframes
-#' @param format the format of the required file
+#' @param format the format of the required file (json, csv, xls, xlsx, xml, geojson or shp)
 #'
 #' @return a dataframe
 #'

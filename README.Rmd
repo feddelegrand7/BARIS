@@ -12,48 +12,107 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-# BARIS
+# BARIS <a><img src='man/figures/hex.png' align="right" height="200" /></a>
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of BARIS is to ...
+With **BARIS** you can exploit the [French official data portal](www.data.gouv.fr) API directly from R. The package offers several capabalities, from listing the available datasets to extracting the needed resources. Nevertheless, there are many functionalities offered by the API (e.g. uploading a dataset, removing a resource among others) that are not covered in the **BARIS** package which really focus on the data analysis aspect of the API. The good news about that is that the user doesn't need an API key or any credential to run the available functions provided by **BARIS**. Finally, a distinction has to be made. The data.gouv API provides several datasets **which contain** one or many dataframes. The unique identifier (ID) of dataset has this form : **53699934a3a729239d2051a1** while the ID of an individual dataframe or resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**. 
 
 ## Installation
 
-You can install the released version of BARIS from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("BARIS")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("feddelegrand7/BARIS")
 ```
-## Example
 
-This is a basic example which shows you how to solve a common problem:
+## BARIS_home()
 
-```{r example}
+Using the function `BARIS_home()` you can list the displayed datasets within the [home page of the website](www.data.gouv.fr). The function doesn't take any argument. This will return a dataframe with the most important information related to the displayed datasets.
+
+```{r}
 library(BARIS)
-## basic example code
+
+BARIS_home()
+
+```
+The data is quite heavy so I encourage you to use `View()` or `datatable()` from the `DT` package. 
+
+
+## BARIS_search()
+
+The `BARIS_search()` function allows you search for a specific dataset. Suppose we're interested at the city of Marseille. 
+
+
+```{r}
+
+BARIS_search(query = "Marseille", n_pages = 20)
+
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+The **n_page** argument is used to specify the number of pages to search for according to the pagination of the API, by default its value is equal to 20. Now, in order to choose a dataset, let's have a look at two columns, the id and the title of each dataset. 
 
-```{r cars}
-summary(cars)
+```{r}
+
+Marseille_data <- BARIS_search(query = "Marseille", n_pages = 20)
+
+Marseille_data[, c("id", "title")]
+
+
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+Suppose we're interested in the dataset entitled **Marseille - Monuments historiques** with the corresponding id: **5cebfa8306e3e77ffdb31ef5** and we want to know more about this data. In the case, the `BARIS_explain()` function can be useful. 
 
-You can also embed plots, for example:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+## BARIS_explain()
+
+The `BARIS_explain()` function returns a description of a dataset. It has one argument which the id of the dataset of interest. 
+
+```{r}
+
+BARIS_explain("5cebfa8306e3e77ffdb31ef5")
+
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+The description is in French but even non-French speakers can use this function in conjuction with a translation tool. 
+
+
+## BARIS_resources()
+
+As mentioned previously, each dataset contains one or several dataframes or as the API call them **resources**. The `BARIS_resources()` function allows you to list all the available resources within a determined dataset. 
+
+
+```{r}
+
+BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments historiques" id
+
+```
+
+
+Many useful information related to the resource are provided: 
+- The id, 
+- the title, 
+- the format, 
+- the date of publication, 
+- the url of the resource,
+- and a description.
+
+
+## BARIS_extract()
+
+The `BARIS_extract()` function allows you to extract directly to your R session the needed resource. You have to specify the id of the resource and its format. Currently, only theses formats are supported: json, csv, xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the url of the resource to upload manually each resource. As an example, let us extract the *MARSEILLE_MONUMENTS_HISTORIQUES_2018.csv* file. 
+
+
+```{r}
+
+BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
+
+```
+
+Finally, I appreciate any feedback, feel free to reach out at [moh_fodil](https://twitter.com/moh_fodil) or open an issue on [Github](https://github.com/feddelegrand7/BARIS/issues).
+
+
+
