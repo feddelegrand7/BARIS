@@ -1,6 +1,6 @@
 Package: BARIS
 Title: Access and Import Data from the French Data Portal data.gouv.fr
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person(given = "Mohamed El Fodil",
            family = "Ihaddaden",
