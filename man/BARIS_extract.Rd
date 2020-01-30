@@ -9,7 +9,7 @@ BARIS_extract(resourceId, format)
 \arguments{
 \item{resourceId}{the unique identifier of the individual dataframe (resource) to read into R. Not to confound with the global datasets ID that includes many dataframes}
 
-\item{format}{the format of the required file}
+\item{format}{the format of the required file (json, csv, xls, xlsx, xml, geojson or shp)}
 }
 \value{
 a dataframe

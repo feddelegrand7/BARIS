@@ -1,19 +1,19 @@
 Package: BARIS
-Title: Access and Import Data from the French Data Portal data.gouv.fr
+Type: Package
+Title: Access and Import Data from the French Open Data Portal 
 Version: 1.0.0
 Authors@R: 
     person(given = "Mohamed El Fodil",
            family = "Ihaddaden",
            role = c("aut", "cre"),
            email = "ihaddaden.fodeil@gmail.com")
-Description: The BARIS package allows the user to exploit and import data from the rich data.gouv French portal through their API <https://doc.data.gouv.fr/api/reference/>. The portal is free and no credential is required for extracting datasets. 
+Description: The `BARIS` package allows the user to exploit and import data from the rich French portal through their API <https://doc.data.gouv.fr/api/reference/>. The portal is free and no credential is required for extracting datasets. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/feddelegrand7/BARIS
 BugReports: https://github.com/feddelegrand7/BARIS/issues
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
 Imports: 
     magrittr (>= 1.5),
     dplyr (>= 0.8.3),
@@ -32,3 +32,4 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown
+RoxygenNote: 6.1.1
