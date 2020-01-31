@@ -1,7 +1,7 @@
 
 #' Home Page Datasets
 #'
-#' @description This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv.fr website.
+#' @description This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv portal.
 #'
 #' @return A dataframe with datasets characteristics
 #'

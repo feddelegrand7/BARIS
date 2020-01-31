@@ -10,7 +10,7 @@ BARIS_home()
 A dataframe with datasets characteristics
 }
 \description{
-This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv.fr website.
+This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv portal.
 }
 \examples{
 \dontrun{
