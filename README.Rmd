@@ -92,18 +92,14 @@ BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments histori
 ```
 
 
-Many useful information related to the resource are provided: 
-- The id, 
-- the title, 
-- the format, 
-- the date of publication, 
-- the url of the resource,
-- and a description.
+Many useful information related to the resource are provided: The id, the title, the format, the date of publication, the url of the resource, and a description.
 
 
 ## BARIS_extract()
 
-The `BARIS_extract()` function allows you to extract directly to your R session the needed resource. You have to specify the id of the resource and its format. Currently, only theses formats are supported: json, csv, xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the url of the resource to upload manually each resource. As an example, let us extract the *MARSEILLE_MONUMENTS_HISTORIQUES_2018.csv* file. 
+The `BARIS_extract()` function allows you to extract directly to your R session the needed resource. You have to specify the id of the resource and its format. Currently, only theses formats are supported: json, csv, xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the url of the resource to donload it manually. 
+
+As an example, let us extract the above csv file: *MARSEILLE_MONUMENTS_HISTORIQUES_2018.csv* using `BARIS_extract()`:
 
 
 ```{r}

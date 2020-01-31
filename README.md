@@ -79,12 +79,12 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #>  4 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
 #>  5 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
 #>  6 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#>  7 5dd7~ Quar~ Datactivist  http~ <NA>  unknown   <NA>            
-#>  8 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
+#>  7 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
+#>  8 5dd7~ Quar~ Datactivist  http~ <NA>  unknown   <NA>            
 #>  9 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
 #> 10 5878~ Arro~ NosDonnées.~ http~ <NA>  unknown   <NA>            
 #> 11 5878~ Quar~ NosDonnées.~ http~ <NA>  unknown   <NA>            
-#> 12 5369~ Arro~ NosDonnées.~ http~ 4     unknown   <NA>            
+#> 12 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
 #> 13 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
 #> 14 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
 #> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
@@ -114,22 +114,22 @@ Marseille_data[, c("id", "title")]
 #>  2 53699233a3a729239d20~ Découpage administratif communal français issu d'~
 #>  3 5cebfa8506e3e77ffdb3~ Marseille - Cimetières                            
 #>  4 5cebfa8706e3e77c78b3~ Marseille - Crèches                               
-#>  5 5cebfa869ce2e764aac3~ Marseille - Subventions                           
-#>  6 5cebfa839ce2e76116c3~ Marseille - Élus                                  
-#>  7 5dd7a9a78b4c41277a7f~ Quartiers de Marseille                            
-#>  8 5cebfa869ce2e76116c3~ Marseille - Délibérations                         
+#>  5 5cebfa839ce2e76116c3~ Marseille - Élus                                  
+#>  6 5cebfa869ce2e764aac3~ Marseille - Subventions                           
+#>  7 5cebfa869ce2e76116c3~ Marseille - Délibérations                         
+#>  8 5dd7a9a78b4c41277a7f~ Quartiers de Marseille                            
 #>  9 5cebfa8306e3e77ffdb3~ Marseille - Monuments historiques                 
 #> 10 5878ee29a3a7291485ca~ Arrondissements de Marseille                      
 #> 11 5878ee75a3a7291484ca~ Quartiers de Marseille                            
-#> 12 53698f14a3a729239d20~ Arrondissements de Marseille                      
-#> 13 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
-#> 14 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
-#> 15 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
+#> 12 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
+#> 13 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
+#> 14 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
+#> 15 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
 #> 16 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
-#> 17 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
-#> 18 5cebfa8706e3e77ffdb3~ Marseille - Elections départementales             
-#> 19 5cebfa8406e3e77ffdb3~ Marseille - Équipements sportifs                  
-#> 20 5cebfa8706e3e77c78b3~ Marseille - Parcours culturels
+#> 17 5cebfa8206e3e77ffdb3~ Marseille - Élections municipales                 
+#> 18 5cebfa879ce2e764aac3~ Marseille - Bureaux de vote                       
+#> 19 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
+#> 20 5cebfa8406e3e77c78b3~ Marseille - Parcs et jardins
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -168,9 +168,9 @@ BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments histori
 #> 2 6328f8b3~ Plan des ~ pdf    2019-05-27T~ https://trou~ Edition Janvier 2~
 ```
 
-Many useful information related to the resource are provided: - The id,
-- the title, - the format, - the date of publication, - the url of the
-resource, - and a description.
+Many useful information related to the resource are provided: The id,
+the title, the format, the date of publication, the url of the resource,
+and a description.
 
 ## BARIS\_extract()
 
@@ -178,8 +178,10 @@ The `BARIS_extract()` function allows you to extract directly to your R
 session the needed resource. You have to specify the id of the resource
 and its format. Currently, only theses formats are supported: json, csv,
 xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the
-url of the resource to upload manually each resource. As an example, let
-us extract the *MARSEILLE\_MONUMENTS\_HISTORIQUES\_2018.csv* file.
+url of the resource to donload it manually.
+
+As an example, let us extract the above csv file:
+*MARSEILLE\_MONUMENTS\_HISTORIQUES\_2018.csv* using `BARIS_extract()`:
 
 ``` r
 
