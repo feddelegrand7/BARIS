@@ -16,7 +16,7 @@ a character string describing a dataset
 This function provides in French a detailed description of a dataset.
 }
 \examples{
-\donttest{
+\dontrun{
 
 BARIS_explain("53699934a3a729239d2051a1")}
 }

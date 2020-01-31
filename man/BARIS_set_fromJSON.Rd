@@ -17,7 +17,7 @@ Uses the memoise package to set a cache function for jsonlite::fromJSON
 The choice of the cache folder defines where to save the local files. If not set, will use tempdir()
 }
 \examples{
-\donttest{
+\dontrun{
 mem_fromJSON <- BARIS_set_fromJSON()
 }
 }

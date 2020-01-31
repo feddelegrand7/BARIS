@@ -8,7 +8,7 @@
 #'
 #' @return a dataframe
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #' BARIS_extract("59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")}
 #' @export
 #' @importFrom magrittr %>%

@@ -6,7 +6,7 @@
 #'
 #' @return a character string describing a dataset
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #'
 #' BARIS_explain("53699934a3a729239d2051a1")}
 #' @export

@@ -9,7 +9,7 @@
 #'
 #' @return A memoised function
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #' mem_fromJSON <- BARIS_set_fromJSON()
 #' }
 #' @export

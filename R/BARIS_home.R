@@ -5,7 +5,7 @@
 #'
 #' @return A dataframe with datasets characteristics
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #'
 #' BARIS_home()}
 #' @export

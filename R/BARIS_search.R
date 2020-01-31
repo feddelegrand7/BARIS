@@ -6,7 +6,7 @@
 #' @param query a character string through which to search
 #' @param n_pages number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation
 #' @return a character string
-#' @examples \donttest{
+#' @examples \dontrun{
 #'
 #' BARIS_search("Marseille")}
 #' @export
