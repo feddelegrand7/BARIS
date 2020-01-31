@@ -31,7 +31,7 @@ devtools::install_github("feddelegrand7/BARIS")
 
 ## BARIS_home()
 
-Using the function `BARIS_home()` you can list the displayed datasets within the [home page of the website](www.data.gouv.fr). The function doesn't take any argument. This will return a dataframe with the most important information related to the displayed datasets.
+Using the function `BARIS_home()` you can list the displayed datasets within the [home page of the website](https://www.data.gouv.fr/fr/). The function doesn't take any argument. This will return a dataframe with the most important information related to the displayed datasets.
 
 ```{r}
 library(BARIS)

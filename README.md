@@ -35,9 +35,9 @@ devtools::install_github("feddelegrand7/BARIS")
 ## BARIS\_home()
 
 Using the function `BARIS_home()` you can list the displayed datasets
-within the [home page of the website](www.data.gouv.fr). The function
-doesn’t take any argument. This will return a dataframe with the most
-important information related to the displayed datasets.
+within the [home page of the website](https://www.data.gouv.fr/fr/). The
+function doesn’t take any argument. This will return a dataframe with
+the most important information related to the displayed datasets.
 
 ``` r
 library(BARIS)
@@ -126,10 +126,10 @@ Marseille_data[, c("id", "title")]
 #> 14 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
 #> 15 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
 #> 16 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
-#> 17 5cebfa8206e3e77ffdb3~ Marseille - Élections municipales                 
-#> 18 5cebfa879ce2e764aac3~ Marseille - Bureaux de vote                       
-#> 19 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
-#> 20 5cebfa8406e3e77c78b3~ Marseille - Parcs et jardins
+#> 17 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
+#> 18 5cebfa8406e3e77c78b3~ Marseille - Parcs et jardins                      
+#> 19 5cebfa8406e3e77ffdb3~ Marseille - Équipements sportifs                  
+#> 20 5cebfa8706e3e77c78b3~ Marseille - Parcours culturels
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
