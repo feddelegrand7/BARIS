@@ -12,15 +12,15 @@ portal](https://www.data.gouv.fr/fr/) API directly from R. The package
 offers several capabilities, from listing the available datasets to
 extracting the needed resources. Nevertheless, there are many
 functionalities offered by the API (e.g. uploading a dataset, removing a
-resource … among others) that are not covered in the **BARIS** package
-which instead really focus on the data analysis aspect of the API. The
-good news about that is that the user doesn’t need an API key or any
-credential to run the available functions provided by **BARIS**.
-Finally, a distinction has to be made. The data.gouv API provides
-several **datasets which contain one or many dataframes.** The unique
-identifier (ID) of dataset has this form : **53699934a3a729239d2051a1**
-while the ID of an individual dataframe or resource has this form:
-**59ea7bba-f38a-4d75-b85f-2d1955050e53**.
+resource … among others) that are not covered within the **BARIS**
+package which instead focus on the data analysis aspect of the API. The
+good news is that the user doesn’t need an API key or any credential to
+run the available functions provided by **BARIS**. Finally, in order to
+fully apprehend the package, a distinction has to be made. The data.gouv
+API provides several **datasets which contain one or many dataframes.**
+The unique identifier (ID) of a dataset has this form :
+**53699934a3a729239d2051a1** while the ID of an individual dataframe or
+resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**.
 
 ## Installation
 
@@ -35,9 +35,10 @@ devtools::install_github("feddelegrand7/BARIS")
 ## BARIS\_home()
 
 Using the function `BARIS_home()` you can list the displayed datasets
-within the [home page of the website](https://www.data.gouv.fr/fr/). The
-function doesn’t take any argument. This will return a dataframe with
-the most important information related to the displayed datasets.
+within the [home page of the data.gouv
+website](https://www.data.gouv.fr/fr/). The function doesn’t take any
+argument. It will return a dataframe with many useful information about
+the dataset.
 
 ``` r
 library(BARIS)
@@ -59,13 +60,13 @@ BARIS_home()
 #> #   last_modified <chr>, last_update <chr>, archived <chr>, deleted <chr>
 ```
 
-The data is quite heavy so I encourage you to use `View()` or
-`datatable()` from the `DT` package.
+The data is quite condensated so you should use the `View()` or
+`DT::datatable()` functions.
 
 ## BARIS\_search()
 
-The `BARIS_search()` function allows you search for a specific dataset.
-Suppose we’re interested at the city of Marseille.
+The `BARIS_search()` function allows you to search for a specific
+dataset. Suppose we’re curious about the city of Marseille.
 
 ``` r
 
@@ -98,9 +99,9 @@ BARIS_search(query = "Marseille", n_pages = 20)
 ```
 
 The **n\_page** argument is used to specify the number of pages to
-search for according to the pagination of the API, by default its value
-is equal to 20. Now, in order to choose a dataset, let’s have a look at
-two columns, the id and the title of each dataset.
+search for according to the pagination system of the API, by default its
+value is equal to 20. Now, in order to choose a dataset, let’s have a
+look at two columns, the ID and the title of each dataset.
 
 ``` r
 
@@ -114,33 +115,33 @@ Marseille_data[, c("id", "title")]
 #>  2 53699233a3a729239d20~ Découpage administratif communal français issu d'~
 #>  3 5cebfa8506e3e77ffdb3~ Marseille - Cimetières                            
 #>  4 5cebfa8706e3e77c78b3~ Marseille - Crèches                               
-#>  5 5cebfa839ce2e76116c3~ Marseille - Élus                                  
-#>  6 5cebfa869ce2e764aac3~ Marseille - Subventions                           
+#>  5 5cebfa869ce2e764aac3~ Marseille - Subventions                           
+#>  6 5cebfa839ce2e76116c3~ Marseille - Élus                                  
 #>  7 5cebfa869ce2e76116c3~ Marseille - Délibérations                         
 #>  8 5dd7a9a78b4c41277a7f~ Quartiers de Marseille                            
 #>  9 5cebfa8306e3e77ffdb3~ Marseille - Monuments historiques                 
 #> 10 5878ee29a3a7291485ca~ Arrondissements de Marseille                      
 #> 11 5878ee75a3a7291484ca~ Quartiers de Marseille                            
-#> 12 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
-#> 13 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
-#> 14 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
-#> 15 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
-#> 16 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
-#> 17 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
-#> 18 5cebfa8406e3e77c78b3~ Marseille - Parcs et jardins                      
-#> 19 5cebfa8406e3e77ffdb3~ Marseille - Équipements sportifs                  
+#> 12 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
+#> 13 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
+#> 14 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
+#> 15 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
+#> 16 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
+#> 17 5cebfa8706e3e77ffdb3~ Marseille - Elections départementales             
+#> 18 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
+#> 19 5cebfa8606e3e77c78b3~ Marseille - Élections présidentielles             
 #> 20 5cebfa8706e3e77c78b3~ Marseille - Parcours culturels
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
-historiques** with the corresponding id: **5cebfa8306e3e77ffdb31ef5**
-and we want to know more about this data. In the case, the
+historiques** with its corresponding ID: **5cebfa8306e3e77ffdb31ef5**
+and we want to know more about this data. In this case, the
 `BARIS_explain()` function can be useful.
 
 ## BARIS\_explain()
 
-The `BARIS_explain()` function returns a description of a dataset. It
-has one argument which the id of the dataset of interest.
+`BARIS_explain()` returns a description of a dataset. It has one
+argument which is the ID of the dataset of interest.
 
 ``` r
 
@@ -149,7 +150,9 @@ BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 ```
 
 The description is in French but even non-French speakers can use this
-function in conjunction with a translation tool.
+function in conjunction with a translation tool, for the example the
+[googleLanguageR
+package](https://cran.r-project.org/web/packages/googleLanguageR/googleLanguageR.pdf).
 
 ## BARIS\_resources()
 
@@ -160,7 +163,7 @@ dataset.
 
 ``` r
 
-BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments historiques" id
+BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments historiques" ID
 #> # A tibble: 2 x 6
 #>   id        title      format published    url           description       
 #>   <chr>     <chr>      <chr>  <chr>        <chr>         <chr>             
@@ -174,14 +177,14 @@ and a description.
 
 ## BARIS\_extract()
 
-The `BARIS_extract()` function allows you to extract directly to your R
-session the needed resource. You have to specify the id of the resource
-and its format. Currently, only theses formats are supported: json, csv,
-xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the
-url of the resource to donload it manually.
+The `BARIS_extract()` function allows you to extract the needed resource
+into your R session. You have to specify the id of the resource and its
+format. Currently, “only” theses formats are supported: json, csv, xls,
+xlsx, xml, geojson and shp, nevertheless you can always rely on the url
+of the resource to download whatever you need.
 
-As an example, let us extract the above csv file:
-*MARSEILLE\_MONUMENTS\_HISTORIQUES\_2018.csv* using `BARIS_extract()`:
+As an example, let us extract the above listed csv file:
+*MARSEILLE\_MONUMENTS\_HISTORIQUES\_2018.csv*:
 
 ``` r
 
