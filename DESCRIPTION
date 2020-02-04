@@ -26,7 +26,8 @@ Imports:
     jsonlite (>= 1.6),
     stringr (>= 1.4.0),
     utils (>= 3.6.1),
-    memoise (>= 1.1.0)
+    memoise (>= 1.1.0),
+    stringi (>= 1.4.3)
 Suggests: 
     knitr,
     rmarkdown

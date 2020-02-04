@@ -11,14 +11,19 @@
 #' BARIS_search("Marseille")}
 #' @export
 #' @importFrom dplyr as_tibble
+#' @importFrom stringr str_replace_all
+#' @importFrom stringi stri_trans_general
 BARIS_search <- function(query, n_pages = 20) {
 
   base_url <- "https://www.data.gouv.fr/api/1/datasets/?q="
 
   search <- query
 
-  complement <- "&page=0&page_size="
+  search <- str_replace_all(search, " ", "%20")
 
+  search <- stri_trans_general(search, id = "Latin-ASCII")
+
+  complement <- "&page=0&page_size="
 
   size = n_pages
 
@@ -51,10 +56,6 @@ BARIS_search <- function(query, n_pages = 20) {
 
   organization       <- df_info$organization[[6]]
 
-  temporal_cov_start <- df_info$temporal_coverage[[1]]
-
-  temporal_cov_end   <- df_info$temporal_coverage[[2]]
-
   page               <- df_info$page
 
   df_info2 <- cbind(
@@ -64,8 +65,6 @@ BARIS_search <- function(query, n_pages = 20) {
     page,
     views,
     frequency,
-    temporal_cov_start,
-    temporal_cov_end,
     created_at,
     last_modified,
     last_update,
