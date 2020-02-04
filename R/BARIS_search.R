@@ -19,7 +19,7 @@ BARIS_search <- function(query, n_pages = 20) {
 
   search <- query
 
-  search <- str_replace_all(search, " ", "%20")
+  search <- str_replace_all(search, c(" " = "%20", "  " = "%20"))
 
   search <- stri_trans_general(search, id = "Latin-ASCII")
 
