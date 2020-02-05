@@ -47,7 +47,7 @@ BARIS_home()
 #> # A tibble: 9 x 13
 #>   id    title organization page  views frequency temporal_cov_st~
 #>   <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>           
-#> 1 5de8~ Fich~ Institut Na~ http~ 6     unknown   2019-12-31      
+#> 1 5de8~ Fich~ Institut Na~ http~ 7     unknown   2019-12-31      
 #> 2 5e00~ "Con~ Ministère d~ http~ 0     unknown   2019-12-08      
 #> 3 5b98~ "Don~ Laboratoire~ http~ 0     hourly    <NA>            
 #> 4 5c5a~ Résu~ Ministère d~ http~ 0     monthly   2019-06-30      
@@ -71,31 +71,31 @@ dataset. Suppose we’re curious about the city of Marseille.
 ``` r
 
 BARIS_search(query = "Marseille", n_pages = 20)
-#> # A tibble: 20 x 13
-#>    id    title organization page  views frequency temporal_cov_st~
-#>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>           
-#>  1 5369~ Traf~ Ministère d~ http~ 3     annual    2011-12-31      
-#>  2 5369~ Déco~ OpenStreetM~ http~ 1     annual    <NA>            
-#>  3 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#>  4 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#>  5 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#>  6 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#>  7 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#>  8 5dd7~ Quar~ Datactivist  http~ <NA>  unknown   <NA>            
-#>  9 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 10 5878~ Arro~ NosDonnées.~ http~ <NA>  unknown   <NA>            
-#> 11 5878~ Quar~ NosDonnées.~ http~ <NA>  unknown   <NA>            
-#> 12 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 13 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 14 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 16 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 17 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> 20 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   <NA>            
-#> # ... with 6 more variables: temporal_cov_end <chr>, created_at <chr>,
-#> #   last_modified <chr>, last_update <chr>, archived <chr>, deleted <chr>
+#> # A tibble: 20 x 11
+#>    id    title organization page  views frequency created_at last_modified
+#>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>      <chr>        
+#>  1 5369~ Traf~ Ministère d~ http~ 3     annual    2013-07-0~ 2016-03-04T0~
+#>  2 5369~ Déco~ OpenStreetM~ http~ 1     annual    2013-11-1~ 2020-01-02T1~
+#>  3 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#>  4 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-07-1~ 2019-05-09T0~
+#>  5 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2017-07-2~ 2019-05-09T0~
+#>  6 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#>  7 5dd7~ Quar~ Datactivist  http~ <NA>  unknown   2019-11-2~ 2019-11-22T1~
+#>  8 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-2~ 2019-11-15T0~
+#>  9 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-10-2~ 2019-05-09T0~
+#> 10 5878~ Arro~ NosDonnées.~ http~ <NA>  unknown   2014-03-0~ 2017-07-10T0~
+#> 11 5878~ Quar~ NosDonnées.~ http~ <NA>  unknown   2016-03-3~ 2017-07-10T0~
+#> 12 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2011-06-1~ 2019-05-09T0~
+#> 13 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#> 14 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2018-08-22T0~
+#> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2011-06-1~ 2019-05-09T0~
+#> 16 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-11-2~ 2019-05-09T0~
+#> 17 5369~ Arro~ NosDonnées.~ http~ 4     unknown   2014-03-2~ 2015-12-06T1~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-04-0~ 2019-05-09T0~
+#> 19 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2018-08-2~ 2019-09-18T0~
+#> 20 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-04-1~ 2019-05-09T0~
+#> # ... with 3 more variables: last_update <chr>, archived <chr>,
+#> #   deleted <chr>
 ```
 
 The **n\_page** argument is used to specify the number of pages to
@@ -117,19 +117,19 @@ Marseille_data[, c("id", "title")]
 #>  4 5cebfa8706e3e77c78b3~ Marseille - Crèches                               
 #>  5 5cebfa869ce2e764aac3~ Marseille - Subventions                           
 #>  6 5cebfa839ce2e76116c3~ Marseille - Élus                                  
-#>  7 5cebfa869ce2e76116c3~ Marseille - Délibérations                         
-#>  8 5dd7a9a78b4c41277a7f~ Quartiers de Marseille                            
+#>  7 5dd7a9a78b4c41277a7f~ Quartiers de Marseille                            
+#>  8 5cebfa869ce2e76116c3~ Marseille - Délibérations                         
 #>  9 5cebfa8306e3e77ffdb3~ Marseille - Monuments historiques                 
 #> 10 5878ee29a3a7291485ca~ Arrondissements de Marseille                      
 #> 11 5878ee75a3a7291484ca~ Quartiers de Marseille                            
-#> 12 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
-#> 13 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
-#> 14 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
-#> 15 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
-#> 16 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
-#> 17 5cebfa8706e3e77ffdb3~ Marseille - Elections départementales             
-#> 18 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
-#> 19 5cebfa8606e3e77c78b3~ Marseille - Élections présidentielles             
+#> 12 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
+#> 13 5cebfa869ce2e76116c3~ Marseille - Équipements sociaux                   
+#> 14 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
+#> 15 5cebfa8306e3e77c78b3~ Marseille - Écoles élémentaires                   
+#> 16 5cebfa839ce2e76116c3~ Marseille - Wifi public                           
+#> 17 53698f14a3a729239d20~ Arrondissements de Marseille                      
+#> 18 5cebfa8706e3e77ffdb3~ Marseille - Elections départementales             
+#> 19 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon                 
 #> 20 5cebfa8706e3e77c78b3~ Marseille - Parcours culturels
 ```
 
@@ -152,7 +152,7 @@ BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 The description is in French but even non-French speakers can use this
 function in conjunction with a translation tool, for the example the
 [googleLanguageR
-package](https://cran.r-project.org/web/packages/googleLanguageR/googleLanguageR.pdf).
+package](https://cran.r-project.org/package=googleLanguageR).
 
 ## BARIS\_resources()
 

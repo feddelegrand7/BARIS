@@ -78,7 +78,7 @@ BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 
 ```
 
-The description is in French but even non-French speakers can use this function in conjunction with a translation tool, for the example the [googleLanguageR package](https://cran.r-project.org/web/packages/googleLanguageR/googleLanguageR.pdf). 
+The description is in French but even non-French speakers can use this function in conjunction with a translation tool, for the example the [googleLanguageR package](https://cran.r-project.org/package=googleLanguageR). 
 
 
 ## BARIS_resources()

@@ -13,3 +13,4 @@ Duration: 1m 53.2s
 R CMD check succeeded
 
 * This is a new release.
+* I've modified the BARIS_seach function that allows now for a sentence query.
