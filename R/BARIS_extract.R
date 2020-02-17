@@ -135,7 +135,7 @@ BARIS_extract <- function(resourceId, format) {
   } else {
 
 
-    error("The available extraction capabilities are limited to
+    stop("The available extraction capabilities are limited to
       json, csv, xls, xlsx, xml, geojson, and shp files. And for downloading, only PDF and ZIP")
 
 
