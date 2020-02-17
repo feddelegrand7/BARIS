@@ -13,7 +13,7 @@ A dataframe with datasets characteristics
 This function displays the most important information about the datasets that are currently displayed within the home page of the data.gouv portal.
 }
 \examples{
-\dontrun{
+\donttest{
 
 BARIS_home()}
 }

@@ -6,7 +6,7 @@
 #'
 #' @return a dataframe of all the dataframes (resources) included within a specific dataset and their main characteristics
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #'
 #' BARIS_resources("53699934a3a729239d2051a1")}
 #' @export

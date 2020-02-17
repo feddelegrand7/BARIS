@@ -16,7 +16,7 @@ a dataframe of all the dataframes (resources) included within a specific dataset
 The data.gouv API provides access to several datasets in which one can find several individual dataframes to exploit. The BARIS_resources lists all the dataframes available within a specific dataset along with the main information concerning the dataframes.
 }
 \examples{
-\dontrun{
+\donttest{
 
 BARIS_resources("53699934a3a729239d2051a1")}
 }

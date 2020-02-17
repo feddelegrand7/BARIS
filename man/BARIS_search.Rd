@@ -18,7 +18,7 @@ a character string
 This function searches specific datasets through the data.gouv API according to the pattern provided into the query argument.
 }
 \examples{
-\dontrun{
+\donttest{
 
 BARIS_search("Marseille")}
 }

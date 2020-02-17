@@ -8,7 +8,7 @@
 #'
 #' @return a dataframe
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' BARIS_extract("59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")}
 #' @export
 #' @importFrom magrittr %>%
@@ -135,8 +135,8 @@ BARIS_extract <- function(resourceId, format) {
   } else {
 
 
-    message(cat("Sorry, currently the available extraction capabilities are limited to \n
-      json, csv, xls, xlsx, xml, geojson, and shp files"))
+    error("The available extraction capabilities are limited to
+      json, csv, xls, xlsx, xml, geojson, and shp files. And for downloading, only PDF and ZIP")
 
 
   }

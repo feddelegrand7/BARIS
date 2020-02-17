@@ -18,6 +18,6 @@ a dataframe
 This function read directly into R a specific dataframe (resource) by the mean of its unique ID. Currently, BARIS_extract() can read directly the following types of file : json, csv, xls, xlsx, xml, geojson, and shp.
 }
 \examples{
-\dontrun{
+\donttest{
 BARIS_extract("59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")}
 }
