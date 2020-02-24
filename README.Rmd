@@ -23,22 +23,27 @@ status](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/
 
 [![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)](https://cran.r-project.org/package=BARIS)
 
-With **BARIS** you can exploit the [French official data portal](https://www.data.gouv.fr/fr/) API directly from R. The package offers several capabilities, from listing the available datasets to extracting the needed resources. Nevertheless, there are many functionalities offered by the API (e.g. uploading a dataset, removing a resource ... among others) that are not covered within the **BARIS** package which instead focus on the data analysis aspect of the API. The good news is that the user doesn't need an API key or any credential to run the available functions provided by **BARIS**. Finally, in order to fully apprehend the package, a distinction has to be made. The data.gouv API provides several **datasets which contain one or many dataframes.** The unique identifier (ID) of a dataset has this form : **53699934a3a729239d2051a1** while the ID of an individual dataframe or resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**. 
+With **BARIS** you can exploit the [French Official Open Data Portal](https://www.data.gouv.fr/fr/) API directly from R. The package offers several capabilities, from listing the available datasets to extracting the needed resources. Nevertheless, there are many functionalities offered by the API (e.g. uploading a dataset, removing a resource ... among others) that are not covered within the **BARIS** package which instead focus on the data analysis aspect of the API. The good news is that the user doesn't need an API key or any credential to run the available functions provided by **BARIS**. Finally, in order to fully apprehend the package, a distinction has to be made. The data.gouv API provides several **datasets which contain one or many dataframes.** The unique identifier (ID) of a dataset has this form : **53699934a3a729239d2051a1** while the ID of an individual dataframe or resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**. 
 
 ## Installation
 
 You can install the BARIS package from
 [CRAN](https://cran.r-project.org/) with:
 
-``` r
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+
 install.packages("BARIS")
+
 ```
+
 
 You can also install the development version from [GitHub](https://github.com/) with:
 
-``` r
-# install.packages("devtools")
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+
 devtools::install_github("feddelegrand7/BARIS")
+
 ```
 
 ## BARIS_home()
@@ -120,6 +125,13 @@ As an example, let us extract the above listed csv file: *MARSEILLE_MONUMENTS_HI
 
 BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
 
+```
+
+If you use the BARIS package for your work, research or teaching, I'd appreciate if you could cite it as follows: 
+
+
+```{r message=FALSE, warning=FALSE}
+citation("BARIS")
 ```
 
 Finally, I appreciate any feedback, feel free to reach out at [moh_fodil](https://twitter.com/moh_fodil) or open an issue on [Github](https://github.com/feddelegrand7/BARIS/issues).

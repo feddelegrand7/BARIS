@@ -12,8 +12,8 @@ status](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/
 
 [![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)](https://cran.r-project.org/package=BARIS)
 
-With **BARIS** you can exploit the [French official data
-portal](https://www.data.gouv.fr/fr/) API directly from R. The package
+With **BARIS** you can exploit the [French Official Open Data
+Portal](https://www.data.gouv.fr/fr/) API directly from R. The package
 offers several capabilities, from listing the available datasets to
 extracting the needed resources. Nevertheless, there are many
 functionalities offered by the API (e.g. uploading a dataset, removing a
@@ -33,6 +33,7 @@ You can install the BARIS package from
 [CRAN](https://cran.r-project.org/) with:
 
 ``` r
+
 install.packages("BARIS")
 ```
 
@@ -40,7 +41,7 @@ You can also install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
+
 devtools::install_github("feddelegrand7/BARIS")
 ```
 
@@ -103,9 +104,9 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2011-06-1~ 2019-05-09T0~
 #> 16 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2018-08-22T0~
 #> 17 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-04-0~ 2019-05-09T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2014-12-0~ 2019-05-09T0~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
 #> 19 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#> 20 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#> 20 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2018-08-2~ 2019-09-18T0~
 #> # ... with 3 more variables: last_update <chr>, archived <chr>,
 #> #   deleted <chr>
 ```
@@ -140,9 +141,9 @@ Marseille_data[, c("id", "title")]
 #> 15 5cebfa849ce2e764aac3~ Marseille - Écoles maternelles                    
 #> 16 5cebfa869ce2e764aac3~ Marseille - Lieux culturels                       
 #> 17 5cebfa8706e3e77ffdb3~ Marseille - Elections départementales             
-#> 18 5cebfa8606e3e77c78b3~ Marseille - Élections présidentielles             
-#> 19 5cebfa8406e3e77c78b3~ Marseille - Parcs et jardins                      
-#> 20 5cebfa8406e3e77ffdb3~ Marseille - Équipements sportifs
+#> 18 5cebfa8406e3e77c78b3~ Marseille - Parcs et jardins                      
+#> 19 5cebfa8406e3e77ffdb3~ Marseille - Équipements sportifs                  
+#> 20 5cebfa8206e3e77c78b3~ Marseille - Programme Opéra Odéon
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -217,6 +218,33 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 #> # ... with 70 more rows, and 5 more variables:
 #> #   proprietaire_du_monument <chr>, epoque_de_construction <chr>,
 #> #   date_de_construction <chr>, longitude <dbl>, latitude <dbl>
+```
+
+If you use the BARIS package for your work, research or teaching, I’d
+appreciate if you could cite it as follows:
+
+``` r
+citation("BARIS")
+#> 
+#> To cite package 'BARIS' in publications use:
+#> 
+#>   Mohamed El Fodil Ihaddaden (2020). BARIS: Access and Import Data
+#>   from the French Open Data Portal. R package version 1.0.0.
+#>   https://CRAN.R-project.org/package=BARIS
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {BARIS: Access and Import Data from the French Open Data Portal},
+#>     author = {Mohamed El Fodil Ihaddaden},
+#>     year = {2020},
+#>     note = {R package version 1.0.0},
+#>     url = {https://CRAN.R-project.org/package=BARIS},
+#>   }
+#> 
+#> ATTENTION: This citation information has been auto-generated from
+#> the package DESCRIPTION file and may need manual editing, see
+#> 'help("citation")'.
 ```
 
 Finally, I appreciate any feedback, feel free to reach out at
