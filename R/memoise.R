@@ -1,4 +1,3 @@
-# Inspired heavily from the simfinR package developed by Marcelo S.Perlin.
 
 #' Sets memoise cache function
 #'
