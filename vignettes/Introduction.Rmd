@@ -13,7 +13,91 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+The French official open data portal offers a huge quantity of information. They also provide a well structured [API](https://doc.data.gouv.fr/api/reference/). The [BARIS](https://github.com/feddelegrand7/BARIS) package allows you to exploit this API in order to get the required data from the portal. 
 
-```{r setup}
-library(BARIS)
+> Within the portal there is the concept of a dataset which contains one or several dataframes or resources. So, if I use the resource term, you need to apprehend it as the dataframe inside a dataset. 
+
+
+The package is available on CRAN, you can also install the development version from Github: 
+
+
+```{r, eval=FALSE}
+
+install.packages("BARIS")
+
 ```
+
+
+Too much talking, let's dive into a reproducible example.
+
+![](https://media.giphy.com/media/mEsS6qLxSDahBScxlO/giphy.gif)
+
+
+# BARIS_search()
+
+The `BARIS_search()` function allows you to search for a specified dataset. **A quick tip: within your query, use plain Nouns and avoid prepositions and determintants: le, la, de, des, en, à ... and so on** :
+
+```{r message=FALSE, warning=FALSE}
+library(BARIS)
+
+BARIS_search(query = "Monuments Historiques Marseille")
+
+```
+
+Cool we have our dataset ... but wait it would be better to get some explanation about it. 
+
+# BARIS_explain()
+
+The `BARIS_explain()` function provides a description of a dataset. The function takes one argument which is the ID of the dataset: 
+
+
+```{r}
+
+BARIS_explain(datasetId = "5cebfa8306e3e77ffdb31ef5")
+
+
+```
+
+![](https://media.giphy.com/media/8P1oO2JbrZK2uSYnL6/giphy.gif)
+
+
+Don't panic if you're not a french speaker. You can always use the great [googleLanguageR](https://cran.r-project.org/web/packages/googleLanguageR/index.html). 
+
+
+Now, it's time to list the resources contained within this dataset !!!
+
+
+
+# BARIS_resources()
+
+
+The `BARIS_resources` function displays the available resources or dataframes within a dataset. The function takes as argument the ID of the dataset: 
+
+```{r}
+BARIS_resources(datasetId = "5cebfa8306e3e77ffdb31ef5")
+
+```
+
+
+You can see from above that the dataset has two resources, a *csv* and a *pdf*. Now, we've reached the interesting part: extracting the dataframe that you'll work on ! 
+
+# BARIS_extract()
+
+Using `BARIS_extract()` you can extract directly into your R session the needed dataset. Currently, “only” theses formats are supported: json, csv, xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the url of the resource to download it manually.
+
+In order to use the function you'll have to specify two arguments: The ID of the resource and its format.
+
+> You can visually catch the structure difference between the ID of a dataset and the ID of a resource. 
+
+
+```{r}
+
+data <- BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
+
+head(data)
+
+```
+
+![](https://media.giphy.com/media/Zb0R1WObsaMQKdsOjQ/giphy.gif)
+
+
