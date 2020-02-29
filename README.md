@@ -12,6 +12,8 @@ status](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/
 
 [![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)](https://cran.r-project.org/package=BARIS)
 
+<a href="https://www.buymeacoffee.com/Fodil" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 With **BARIS** you can exploit the [French Official Open Data
 Portal](https://www.data.gouv.fr/fr/) API directly from R. The package
 offers several capabilities, from listing the available datasets to
