@@ -37,7 +37,7 @@ BARIS_extract <- function(resourceId, format) {
 
   #### Reading CSV files ############################################################
 
-  if(format == "csv" || format == "text" || format == "text/csv" ){
+  if(format == "csv" || format == "text" || format == "text/csv"  | format == "txt"){
 
     df_csv <- fread(final_url, stringsAsFactors = F, sep = "auto", encoding = "UTF-8", showProgress = F)
     df_csv <- as_tibble(df_csv)
@@ -136,7 +136,7 @@ BARIS_extract <- function(resourceId, format) {
 
 
     stop("The available extraction capabilities are limited to
-      json, csv, xls, xlsx, xml, geojson, and shp files. And for downloading, only PDF and ZIP")
+      json, csv, text, xls, xlsx, xml, geojson, and shp files. And for downloading, only PDF and ZIP")
 
 
   }
