@@ -1,0 +1,5 @@
+Name: BARIS
+Description: Interacting with the data.gouv.fr api using BARIS.
+Binding: BARIS_ui
+Interactive: true
+

@@ -27,7 +27,10 @@ Imports:
     stringr (>= 1.4.0),
     utils (>= 3.6.1),
     memoise (>= 1.1.0),
-    stringi (>= 1.4.3)
+    stringi (>= 1.4.3),
+    shiny,
+    miniUI,
+    rstudioapi
 Suggests: 
     knitr,
     rmarkdown
