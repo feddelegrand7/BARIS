@@ -42,7 +42,7 @@ BARIS_ui <- function() {
         left = miniUI::miniTitleBarButton("cancel1", "Cancel", primary = T)
       ),
       miniUI::miniContentPanel(
-        shiny::p("Queries must be written in French, don't forget to click on Get"),
+        shiny::p("Queries must be written in French, click on Get the first time, after that just retype another query"),
         shiny::textInput(inputId = "search_input", label = "What are you looking for ? "),
         shiny::tableOutput(outputId = "search_output")
 
