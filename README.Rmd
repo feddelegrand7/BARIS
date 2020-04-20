@@ -50,7 +50,7 @@ devtools::install_github("feddelegrand7/BARIS")
 
 Using the function `BARIS_home()` you can list the displayed datasets within the [home page of the data.gouv website](https://www.data.gouv.fr/fr/). The function doesn't take any argument. It will return a dataframe with many useful information about the dataset.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(BARIS)
 
 BARIS_home()
@@ -61,7 +61,7 @@ The data is quite condensated so you should use the `View()` or `DT::datatable()
 
 ## BARIS_search()
 
-The `BARIS_search()` function allows you to search for a specific dataset. Suppose we're curious about the city of Marseille. 
+The `BARIS_search()` function allows you to search for a specific data set. Suppose we're curious about the city of Marseille. 
 
 
 ```{r}
@@ -95,12 +95,12 @@ BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 
 ```
 
-The description is in French but even non-French speakers can use this function in conjunction with a translation tool, for the example the [googleLanguageR package](https://cran.r-project.org/package=googleLanguageR). 
+The description is in French but even non-French speakers can use this function in conjunction with a translation tool, for the example the [googleLanguageR package]( https://CRAN.R-project.org/package=googleLanguageR). 
 
 
 ## BARIS_resources()
 
-As mentioned previously, each dataset contains one or several dataframes or as the API call them **resources**. The `BARIS_resources()` function allows you to list all the available resources within a determined dataset. 
+As mentioned previously, each data set contains one or several data frames or as the API call them **resources**. The `BARIS_resources()` function allows you to list all the available resources within a determined data set. 
 
 
 ```{r}

@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 The French official open data portal offers a huge quantity of information. They also provide a well structured [API](https://doc.data.gouv.fr/api/reference/). The [BARIS](https://github.com/feddelegrand7/BARIS) package allows you to exploit this API in order to get the required data from the portal. 
 
-> Within the portal there is the concept of a dataset which contains one or several dataframes or resources. So, if I use the resource term, you need to apprehend it as the dataframe inside a dataset. 
+> Within the portal there is the concept of a data set which contains one or several data frames or resources. So, if I use the resource term, you need to apprehend it as the data frame inside a data set. 
 
 
 The package is available on CRAN, you can also install the development version from Github: 
@@ -33,7 +33,7 @@ Too much talking, let's dive into a reproducible example.
 
 # BARIS_search()
 
-The `BARIS_search()` function allows you to search for a specified dataset. **A quick tip: within your query, use plain Nouns and avoid prepositions and determintants: le, la, de, des, en, à ... and so on** :
+The `BARIS_search()` function allows you to search for a specified data set. **A quick tip: within your query, use plain Nouns and avoid prepositions and determinants: le, la, de, des, en, à ... and so on** :
 
 ```{r message=FALSE, warning=FALSE}
 library(BARIS)
@@ -42,11 +42,11 @@ BARIS_search(query = "Monuments Historiques Marseille")
 
 ```
 
-Cool we have our dataset ... but wait it would be better to get some explanation about it. 
+Cool we have our data set ... but wait it would be better to get some explanation about it. 
 
 # BARIS_explain()
 
-The `BARIS_explain()` function provides a description of a dataset. The function takes one argument which is the ID of the dataset: 
+The `BARIS_explain()` function provides a description of a data set. The function takes one argument which is the ID of the data set: 
 
 
 ```{r}
@@ -57,17 +57,17 @@ BARIS_explain(datasetId = "5cebfa8306e3e77ffdb31ef5")
 ```
 
 
-Don't panic if you're not a french speaker. You can always use the great [googleLanguageR](https://cran.r-project.org/web/packages/googleLanguageR/index.html). 
+Don't panic if you're not a french speaker. You can always use the great [googleLanguageR](https://CRAN.R-project.org/package=googleLanguageR). 
 
 
-Now, it's time to list the resources contained within this dataset !!!
+Now, it's time to list the resources contained within this data set !!!
 
 
 
 # BARIS_resources()
 
 
-The `BARIS_resources` function displays the available resources or dataframes within a dataset. The function takes as argument the ID of the dataset: 
+The `BARIS_resources` function displays the available resources or data frames within a data set. The function takes as argument the ID of the data set: 
 
 ```{r}
 BARIS_resources(datasetId = "5cebfa8306e3e77ffdb31ef5")
@@ -75,15 +75,15 @@ BARIS_resources(datasetId = "5cebfa8306e3e77ffdb31ef5")
 ```
 
 
-You can see from above that the dataset has two resources, a *csv* and a *pdf*. Now, we've reached the interesting part: extracting the dataframe that you'll work on ! 
+You can see from above that the data set has two resources, a *csv* and a *pdf*. Now, we've reached the interesting part: extracting the data frame that you'll work on ! 
 
 # BARIS_extract()
 
-Using `BARIS_extract()` you can extract directly into your R session the needed dataset. Currently, “only” theses formats are supported: json, csv, xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the url of the resource to download it manually.
+Using `BARIS_extract()` you can extract directly into your R session the needed data set. Currently, “only” theses formats are supported: json, csv, xls, xlsx, xml, geojson and shp, nevertheless you can always rely on the url of the resource to download it manually.
 
 In order to use the function you'll have to specify two arguments: The ID of the resource and its format.
 
-> You can visually catch the structure difference between the ID of a dataset and the ID of a resource. 
+> You can visually catch the structure difference between the ID of a data set and the ID of a resource. 
 
 
 ```{r}
