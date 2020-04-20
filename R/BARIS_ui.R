@@ -191,7 +191,7 @@ BARIS_ui <- function() {
 
       output$extract_output <- shiny::renderText(
 
-        paste(input$resource_name, " <- ", "BARIS_extract(", "'",input$resource_id,"'" , " , ","'",input$resource_format,"'", " )", sep = "")
+        paste(input$resource_name, " <- ", "BARIS::BARIS_extract(", "'",input$resource_id,"'" , " , ","'",input$resource_format,"'", " )", sep = "")
 
       )
 
