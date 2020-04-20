@@ -30,8 +30,6 @@ install.packages("BARIS")
 
 Too much talking, let's dive into a reproducible example.
 
-![](https://media.giphy.com/media/mEsS6qLxSDahBScxlO/giphy.gif)
-
 
 # BARIS_search()
 
@@ -57,8 +55,6 @@ BARIS_explain(datasetId = "5cebfa8306e3e77ffdb31ef5")
 
 
 ```
-
-![](https://media.giphy.com/media/8P1oO2JbrZK2uSYnL6/giphy.gif)
 
 
 Don't panic if you're not a french speaker. You can always use the great [googleLanguageR](https://cran.r-project.org/web/packages/googleLanguageR/index.html). 
@@ -98,6 +94,5 @@ head(data)
 
 ```
 
-![](https://media.giphy.com/media/Zb0R1WObsaMQKdsOjQ/giphy.gif)
 
-
+End of the vignette. 
