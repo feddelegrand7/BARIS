@@ -14,17 +14,17 @@ status](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/
 
 With **BARIS** you can exploit the [French Official Open Data
 Portal](https://www.data.gouv.fr/fr/) API directly from R. The package
-offers several capabilities, from listing the available datasets to
-extracting the needed resources. Nevertheless, there are many
-functionalities offered by the API (e.g. uploading a dataset, removing a
-resource … among others) that are not covered within the **BARIS**
-package which instead focus on the data analysis aspect of the API. The
-good news is that the user doesn’t need an API key or any credential to
-run the available functions provided by **BARIS**. Finally, in order to
-fully apprehend the package, a distinction has to be made. The data.gouv
-API provides several **datasets which contain one or many dataframes.**
-The unique identifier (ID) of a dataset has this form :
-**53699934a3a729239d2051a1** while the ID of an individual dataframe or
+offers several capabilities, from listing the available data sets to
+extracting the needed resources. Nevertheless, there are many features
+offered by the API (e.g. uploading a data set, removing a resource …
+among others) that are not covered within the **BARIS** package which
+instead focus on the data analysis aspect of the API. The good news is
+that the user doesn’t need an API key or any credential to run the
+available functions provided by **BARIS**. Finally, in order to fully
+apprehend the package, a distinction has to be made. The data.gouv API
+provides several **datasets which contain one or many data frames.** The
+unique identifier (ID) of a data set has this form :
+**53699934a3a729239d2051a1** while the ID of an individual data frame or
 resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**.
 
 ## Installation
@@ -50,8 +50,8 @@ devtools::install_github("feddelegrand7/BARIS")
 Using the function `BARIS_home()` you can list the displayed datasets
 within the [home page of the data.gouv
 website](https://www.data.gouv.fr/fr/). The function doesn’t take any
-argument. It will return a dataframe with many useful information about
-the dataset.
+argument. It will return a data frame with many useful information about
+the data set.
 
 ``` r
 library(BARIS)
@@ -61,7 +61,7 @@ BARIS_home()
 #>    id    title organization page  views frequency temporal_cov_st~
 #>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>           
 #>  1 5e7e~ "Don~ Santé publi~ http~ 72    daily     <NA>            
-#>  2 5e74~ "Don~ Santé publi~ http~ 31    unknown   <NA>            
+#>  2 5e74~ "Don~ Santé publi~ http~ 32    unknown   <NA>            
 #>  3 5e7d~ "Don~ Santé publi~ http~ 6     unknown   <NA>            
 #>  4 5e80~ "Nom~ Institut Na~ http~ 1     weekly    <NA>            
 #>  5 5de8~ "Fic~ Institut Na~ http~ 9     monthly   2020-12-31      
@@ -93,23 +93,23 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #>  1 5369~ Traf~ Ministère d~ http~ 3     annual    2013-07-0~ 2016-03-04T0~
 #>  2 5369~ Déco~ OpenStreetM~ http~ 1     annual    2013-11-1~ 2020-01-02T1~
 #>  3 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#>  4 5e5a~ Cave~ <NA>         http~ <NA>  irregular 2020-02-2~ 2020-03-01T1~
+#>  4 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
 #>  5 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2017-07-2~ 2019-05-09T0~
-#>  6 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#>  6 5e5a~ Cave~ <NA>         http~ <NA>  irregular 2020-02-2~ 2020-03-01T1~
 #>  7 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-07-1~ 2019-05-09T0~
 #>  8 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-2~ 2019-11-15T0~
 #>  9 5dd7~ Quar~ Datactivist  http~ <NA>  unknown   2019-11-2~ 2019-11-22T1~
-#> 10 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-10-2~ 2019-05-09T0~
-#> 11 5e87~ Mars~ Ville de Ma~ http~ <NA>  unknown   2020-04-0~ 2020-04-03T0~
-#> 12 5878~ Arro~ NosDonnées.~ http~ <NA>  unknown   2014-03-0~ 2017-07-10T0~
-#> 13 5878~ Quar~ NosDonnées.~ http~ <NA>  unknown   2016-03-3~ 2017-07-10T0~
+#> 10 5e87~ Mars~ Ville de Ma~ http~ <NA>  unknown   2020-04-0~ 2020-04-03T0~
+#> 11 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-10-2~ 2019-05-09T0~
+#> 12 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-04-0~ 2019-05-09T0~
+#> 13 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-11-1~ 2019-05-09T0~
 #> 14 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2014-05-0~ 2019-05-09T0~
-#> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-11-1~ 2019-05-09T0~
-#> 16 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-04-0~ 2019-05-09T0~
-#> 17 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2018-08-2~ 2019-09-18T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-04-1~ 2019-05-09T0~
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#> 20 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2018-08-2~ 2019-09-18T0~
+#> 16 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#> 17 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2014-12-0~ 2019-05-09T0~
+#> 19 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-04-1~ 2019-05-09T0~
+#> 20 5878~ Arro~ NosDonnées.~ http~ <NA>  unknown   2014-03-0~ 2017-07-10T0~
 #> # ... with 3 more variables: last_update <chr>, archived <chr>, deleted <chr>
 ```
 
@@ -129,23 +129,23 @@ Marseille_data[, c("id", "title")]
 #>  1 5369a248a3a729239d206~ Trafic aéroport Marseille-Provence : passagers et mou~
 #>  2 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
 #>  3 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  4 5e5a7bc2634f413b2369e~ Caves à bière                                         
+#>  4 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
 #>  5 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
-#>  6 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
+#>  6 5e5a7bc2634f413b2369e~ Caves à bière                                         
 #>  7 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
 #>  8 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
 #>  9 5dd7a9a78b4c41277a7fb~ Quartiers de Marseille                                
-#> 10 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
-#> 11 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
-#> 12 5878ee29a3a7291485cac~ Arrondissements de Marseille                          
-#> 13 5878ee75a3a7291484cac~ Quartiers de Marseille                                
+#> 10 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
+#> 11 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
+#> 12 5cebfa8706e3e77ffdb31~ Marseille - Elections départementales                 
+#> 13 5cebfa879ce2e764aac3a~ Marseille - Bureaux de vote                           
 #> 14 5cebfa8206e3e77ffdb31~ Marseille - Élections municipales                     
-#> 15 5cebfa879ce2e764aac3a~ Marseille - Bureaux de vote                           
-#> 16 5cebfa8706e3e77ffdb31~ Marseille - Elections départementales                 
-#> 17 5cebfa8206e3e77c78b31~ Marseille - Programme Opéra Odéon                     
-#> 18 5cebfa8706e3e77c78b31~ Marseille - Parcours culturels                        
-#> 19 5cebfa8406e3e77ffdb31~ Marseille - Équipements sportifs                      
-#> 20 5cebfa8406e3e77c78b31~ Marseille - Parcs et jardins
+#> 15 5cebfa8206e3e77c78b31~ Marseille - Programme Opéra Odéon                     
+#> 16 5cebfa8406e3e77ffdb31~ Marseille - Équipements sportifs                      
+#> 17 5cebfa8406e3e77c78b31~ Marseille - Parcs et jardins                          
+#> 18 5cebfa8606e3e77c78b31~ Marseille - Élections présidentielles                 
+#> 19 5cebfa8706e3e77c78b31~ Marseille - Parcours culturels                        
+#> 20 5878ee29a3a7291485cac~ Arrondissements de Marseille
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -221,6 +221,15 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 #> #   epoque_de_construction <chr>, date_de_construction <chr>, longitude <dbl>,
 #> #   latitude <dbl>
 ```
+
+# BARIS Addin
+
+BARIS comes with an integrated Addin that generates a Shiny widget
+allowing the user to interact with the package in an interactive manner.
+
+<a><img src='man/figures/baris.gif' align="center" height="500" /></a>
+
+# Citation
 
 If you use the BARIS package for your work, research or teaching, I’d
 appreciate if you could cite it as follows:
