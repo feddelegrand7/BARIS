@@ -1,10 +1,10 @@
 
-#' Datasets description
+#' Data set description
 #'
-#' @description This function provides in French a detailed description of a dataset.
-#' @param datasetId the unique id of a dataset
+#' @description This function provides in French a detailed description of a data set.
+#' @param datasetId the unique id of a data set
 #'
-#' @return a character string describing a dataset
+#' @return a character string describing a data set
 #'
 #' @examples \donttest{
 #'
@@ -14,9 +14,12 @@
 #' @importFrom dplyr as_tibble
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_trim
+#' @importFrom checkmate assert_character
 
 
 BARIS_explain <- function(datasetId) {
+
+  checkmate::assert_character(datasetId)
 
 
   basic_url <- "https://www.data.gouv.fr/api/1/datasets/"

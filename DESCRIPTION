@@ -30,7 +30,8 @@ Imports:
     stringi,
     shiny,
     miniUI,
-    rstudioapi
+    rstudioapi,
+    checkmate
 Suggests: 
     knitr,
     rmarkdown

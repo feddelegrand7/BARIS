@@ -1,9 +1,9 @@
-#' Searching for a dataset
+#' Searching for a data set
 #'
-#' @description This function searches specific datasets through the data.gouv API according to the pattern provided into the query argument.
+#' @description This function searches specific data sets through the data.gouv API according to the pattern provided into the query argument.
 #'
 #'
-#' @param query a character string through which to search
+#' @param query a character string defining the research.
 #' @param n_pages number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation
 #' @return a character string
 #' @examples \donttest{
@@ -13,7 +13,14 @@
 #' @importFrom dplyr as_tibble
 #' @importFrom stringr str_replace_all
 #' @importFrom stringi stri_trans_general
+#' @importFrom checkmate assert_character
+
+
 BARIS_search <- function(query, n_pages = 20) {
+
+  checkmate::assert_character(query)
+  checkmate::assertCount(n_pages)
+
 
   base_url <- "https://www.data.gouv.fr/api/1/datasets/?q="
 

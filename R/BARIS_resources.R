@@ -1,19 +1,23 @@
-#' Displaying resources within a dataset
+#' Displaying resources within a data set
 #'
-#' @description The data.gouv API provides access to several datasets in which one can find several individual dataframes to exploit. The BARIS_resources lists all the dataframes available within a specific dataset along with the main information concerning the dataframes.
+#' @description The data.gouv API provides access to several data sets in which one can find several individual data frames to exploit. The BARIS_resources lists all the data frames available within a specific data set along with the main information concerning the data frames.
 #'
-#' @param datasetId the unique identifier of a dataset
+#' @param datasetId the unique identifier of a data set
 #'
-#' @return a dataframe of all the dataframes (resources) included within a specific dataset and their main characteristics
+#' @return a table of all the data frames (resources) included within a specific data set and their main characteristics
 #'
 #' @examples \donttest{
 #'
 #' BARIS_resources("53699934a3a729239d2051a1")}
 #' @export
 #' @importFrom dplyr as_tibble
-#'
+#' @importFrom checkmate assert_character
+
+
 BARIS_resources <- function(datasetId) {
 
+
+  checkmate::assert_character(datasetId)
 
   basic_url <- "https://www.data.gouv.fr/api/1/datasets/"
 
