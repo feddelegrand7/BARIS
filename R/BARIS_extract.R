@@ -72,7 +72,6 @@ BARIS_extract <- function(resourceId, format) {
 
     xmldf <- xmlToDataFrame(xml_info)
 
-    xmldf <- clean_names(xmldf)
 
     return(xmldf)
 
@@ -95,12 +94,6 @@ BARIS_extract <- function(resourceId, format) {
     unlink(c(temp, temp2))
 
 
-  #### Reading PDF files ############################################################
-
-
-  } else if (format == "pdf" || format == "document"){
-
-    BROWSE(final_url)
 
   #### Downloading ZIP file ############################################################
 
@@ -133,7 +126,6 @@ BARIS_extract <- function(resourceId, format) {
 
     df_json <- fromJSON(final_url)
 
-    df_json <- clean_names(df_json)
 
     return(df_json)
 

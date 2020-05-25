@@ -2,18 +2,18 @@
 % Please edit documentation in R/BARIS_explain.R
 \name{BARIS_explain}
 \alias{BARIS_explain}
-\title{Datasets description}
+\title{Data set description}
 \usage{
 BARIS_explain(datasetId)
 }
 \arguments{
-\item{datasetId}{the unique id of a dataset}
+\item{datasetId}{the unique id of a data set}
 }
 \value{
-a character string describing a dataset
+a character string describing a data set
 }
 \description{
-This function provides in French a detailed description of a dataset.
+This function provides in French a detailed description of a data set.
 }
 \examples{
 \donttest{

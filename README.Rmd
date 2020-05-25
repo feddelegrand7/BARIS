@@ -132,11 +132,6 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 
 BARIS comes with an integrated Addin that generates a Shiny widget allowing the user to interact with the package in an interactive manner. 
 
-<a><img src='man/figures/baris.gif' align="center" height="500" /></a>
-
-
-
-
 
 
 # Citation

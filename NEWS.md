@@ -1,3 +1,5 @@
+# BARIS 1.1.1
+
 # BARIS 1.1.0
 
 * I've and add-in that allows the user to use the package in an interactive manner. 

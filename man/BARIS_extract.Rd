@@ -2,20 +2,20 @@
 % Please edit documentation in R/BARIS_extract.R
 \name{BARIS_extract}
 \alias{BARIS_extract}
-\title{Reading A Dataframe From The French Portal data.gouv API}
+\title{Extracting A Data frame From The French Portal data.gouv API}
 \usage{
 BARIS_extract(resourceId, format)
 }
 \arguments{
-\item{resourceId}{the unique identifier of the individual dataframe (resource) to read into R. Not to confound with the global datasets ID that includes many dataframes}
+\item{resourceId}{the unique identifier of the individual data frame (resource) to read into R. Not to confound with the global data sets ID that includes many data frames}
 
 \item{format}{the format of the required file (json, csv, xls, xlsx, xml, geojson or shp)}
 }
 \value{
-a dataframe
+a data frame
 }
 \description{
-This function read directly into R a specific dataframe (resource) by the mean of its unique ID. Currently, BARIS_extract() can read directly the following types of file : json, csv, xls, xlsx, xml, geojson, and shp.
+This function read directly into R a specific data frame (resource) by the mean of its unique ID. Currently, BARIS_extract() can read directly the following types of file : json, csv, xls, xlsx, xml, geojson, and shp.
 }
 \examples{
 \donttest{

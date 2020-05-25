@@ -60,18 +60,18 @@ BARIS_home()
 #> # A tibble: 12 x 13
 #>    id    title organization page  views frequency temporal_cov_st~
 #>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>           
-#>  1 5e7e~ "Don~ Santé publi~ http~ 72    daily     <NA>            
-#>  2 5e74~ "Don~ Santé publi~ http~ 32    unknown   <NA>            
-#>  3 5e7d~ "Don~ Santé publi~ http~ 6     unknown   <NA>            
-#>  4 5e80~ "Nom~ Institut Na~ http~ 1     weekly    <NA>            
-#>  5 5de8~ "Fic~ Institut Na~ http~ 9     monthly   2020-12-31      
-#>  6 5aea~ "Dat~ OpenEventDa~ http~ 2     daily     <NA>            
-#>  7 5ac4~ "Ann~ Caisse nati~ http~ 1     monthly   2019-05-01      
-#>  8 5369~ "Bas~ Ministère d~ http~ 13    unknown   <NA>            
-#>  9 5c5a~ "Rés~ Ministère d~ http~ 0     monthly   2019-06-30      
-#> 10 5b98~ "Don~ Laboratoire~ http~ 0     hourly    <NA>            
-#> 11 5cc1~ "Dem~ Etalab       http~ 15    semiannu~ <NA>            
-#> 12 5369~ "Déc~ OpenStreetM~ http~ 27    annual    <NA>            
+#>  1 5eaa~ "Ind~ Ministère d~ http~ 15    unknown   <NA>            
+#>  2 5eb2~ "Sit~ Ministère d~ http~ 0     hourly    <NA>            
+#>  3 5e7d~ "Don~ Santé publi~ http~ 9     unknown   <NA>            
+#>  4 5e74~ "Don~ Santé publi~ http~ 43    unknown   <NA>            
+#>  5 5e7e~ "Don~ Santé publi~ http~ 108   daily     <NA>            
+#>  6 5ea7~ "Niv~ Santé publi~ http~ 3     daily     <NA>            
+#>  7 5ec3~ "Mes~ Unions de R~ http~ 0     unknown   <NA>            
+#>  8 5e9d~ "Don~ Etalab       http~ 1     daily     2020-12-31      
+#>  9 5ebc~ "Don~ Etalab       http~ 0     unknown   <NA>            
+#> 10 5ac4~ "Ann~ Caisse nati~ http~ 1     monthly   2019-05-01      
+#> 11 5ebc~ "Don~ Etalab       http~ 0     weekly    <NA>            
+#> 12 5e9d~ "SIN~ ADEME        http~ 0     unknown   <NA>            
 #> # ... with 6 more variables: temporal_cov_end <chr>, created_at <chr>,
 #> #   last_modified <chr>, last_update <chr>, archived <chr>, deleted <chr>
 ```
@@ -90,26 +90,26 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #> # A tibble: 20 x 11
 #>    id    title organization page  views frequency created_at last_modified
 #>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>      <chr>        
-#>  1 5369~ Traf~ Ministère d~ http~ 3     annual    2013-07-0~ 2016-03-04T0~
-#>  2 5369~ Déco~ OpenStreetM~ http~ 1     annual    2013-11-1~ 2020-01-02T1~
-#>  3 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#>  4 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#>  5 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2017-07-2~ 2019-05-09T0~
-#>  6 5e5a~ Cave~ <NA>         http~ <NA>  irregular 2020-02-2~ 2020-03-01T1~
-#>  7 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-07-1~ 2019-05-09T0~
-#>  8 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-2~ 2019-11-15T0~
-#>  9 5dd7~ Quar~ Datactivist  http~ <NA>  unknown   2019-11-2~ 2019-11-22T1~
-#> 10 5e87~ Mars~ Ville de Ma~ http~ <NA>  unknown   2020-04-0~ 2020-04-03T0~
-#> 11 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-10-2~ 2019-05-09T0~
-#> 12 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2015-04-0~ 2019-05-09T0~
-#> 13 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-11-1~ 2019-05-09T0~
-#> 14 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2014-05-0~ 2019-05-09T0~
-#> 15 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2018-08-2~ 2019-09-18T0~
-#> 16 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#> 17 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2012-12-0~ 2019-05-09T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2014-12-0~ 2019-05-09T0~
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ <NA>  unknown   2013-04-1~ 2019-05-09T0~
-#> 20 5878~ Arro~ NosDonnées.~ http~ <NA>  unknown   2014-03-0~ 2017-07-10T0~
+#>  1 5369~ Traf~ Ministère d~ http~ 0     annual    2013-07-0~ 2016-03-04T0~
+#>  2 5369~ Déco~ OpenStreetM~ http~ 28    annual    2013-11-1~ 2020-01-02T1~
+#>  3 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#>  4 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
+#>  5 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2019-11-15T0~
+#>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
+#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#>  8 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2017-07-2~ 2019-05-09T0~
+#>  9 5dd7~ Quar~ Datactivist  http~ 0     unknown   2019-11-2~ 2019-11-22T1~
+#> 10 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2019-05-09T0~
+#> 11 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
+#> 12 5878~ Quar~ NosDonnées.~ http~ 0     unknown   2016-03-3~ 2017-07-10T0~
+#> 13 5878~ Arro~ NosDonnées.~ http~ 0     unknown   2014-03-0~ 2017-07-10T0~
+#> 14 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2018-02-0~ 2019-05-09T0~
+#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2009-06-0~ 2019-05-27T0~
+#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-12-30T0~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2014-05-0~ 2019-05-09T0~
+#> 20 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
 #> # ... with 3 more variables: last_update <chr>, archived <chr>, deleted <chr>
 ```
 
@@ -129,23 +129,23 @@ Marseille_data[, c("id", "title")]
 #>  1 5369a248a3a729239d206~ Trafic aéroport Marseille-Provence : passagers et mou~
 #>  2 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
 #>  3 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  4 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
-#>  5 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
-#>  6 5e5a7bc2634f413b2369e~ Caves à bière                                         
-#>  7 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
-#>  8 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
+#>  4 5e5a7bc2634f413b2369e~ Caves à bière                                         
+#>  5 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
+#>  6 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
+#>  7 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
+#>  8 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
 #>  9 5dd7a9a78b4c41277a7fb~ Quartiers de Marseille                                
-#> 10 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
-#> 11 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
-#> 12 5cebfa8706e3e77ffdb31~ Marseille - Elections départementales                 
-#> 13 5cebfa879ce2e764aac3a~ Marseille - Bureaux de vote                           
-#> 14 5cebfa8206e3e77ffdb31~ Marseille - Élections municipales                     
-#> 15 5cebfa8206e3e77c78b31~ Marseille - Programme Opéra Odéon                     
-#> 16 5cebfa8406e3e77ffdb31~ Marseille - Équipements sportifs                      
-#> 17 5cebfa8406e3e77c78b31~ Marseille - Parcs et jardins                          
-#> 18 5cebfa8606e3e77c78b31~ Marseille - Élections présidentielles                 
-#> 19 5cebfa8706e3e77c78b31~ Marseille - Parcours culturels                        
-#> 20 5878ee29a3a7291485cac~ Arrondissements de Marseille
+#> 10 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
+#> 11 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
+#> 12 5878ee75a3a7291484cac~ Quartiers de Marseille                                
+#> 13 5878ee29a3a7291485cac~ Arrondissements de Marseille                          
+#> 14 5cebfa889ce2e76116c3a~ Marseille - Tournages de films et séries              
+#> 15 5cebfa829ce2e76116c3a~ Marseille - Élections européennes                     
+#> 16 5cebfa839ce2e764aac3a~ Marseille - Marchés forains                           
+#> 17 5cebfa859ce2e76116c3a~ Marseille - Budget primitif                           
+#> 18 5cebfa8306e3e77c78b31~ Marseille - Bases nautiques et plages                 
+#> 19 5cebfa8706e3e77ffdb31~ Marseille - Élections législatives                    
+#> 20 5cebfa879ce2e76116c3a~ Marseille - Localisation des stations de taxis
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -226,8 +226,6 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 
 BARIS comes with an integrated Addin that generates a Shiny widget
 allowing the user to interact with the package in an interactive manner.
-
-<a><img src='man/figures/baris.gif' align="center" height="500" /></a>
 
 # Citation
 

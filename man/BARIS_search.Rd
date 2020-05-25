@@ -2,12 +2,12 @@
 % Please edit documentation in R/BARIS_search.R
 \name{BARIS_search}
 \alias{BARIS_search}
-\title{Searching for a dataset}
+\title{Searching for a data set}
 \usage{
 BARIS_search(query, n_pages = 20)
 }
 \arguments{
-\item{query}{a character string through which to search}
+\item{query}{a character string defining the research.}
 
 \item{n_pages}{number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation}
 }
@@ -15,7 +15,7 @@ BARIS_search(query, n_pages = 20)
 a character string
 }
 \description{
-This function searches specific datasets through the data.gouv API according to the pattern provided into the query argument.
+This function searches specific data sets through the data.gouv API according to the pattern provided into the query argument.
 }
 \examples{
 \donttest{
