@@ -16,12 +16,18 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/package=BARIS)
+![CRAN
+status](https://www.r-pkg.org/badges/version/BARIS)
+
+![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)
+
+
+<a href="https://www.buymeacoffee.com/Fodil" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 
 <!-- badges: end -->
 
-[![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)](https://cran.r-project.org/package=BARIS)
+
 
 With **BARIS** you can exploit the [French Official Open Data Portal](https://www.data.gouv.fr/fr/) API directly from R. The package offers several capabilities, from listing the available data sets to extracting the needed resources. Nevertheless, there are many features offered by the API (e.g. uploading a data set, removing a resource ... among others) that are not covered within the **BARIS** package which instead focus on the data analysis aspect of the API. The good news is that the user doesn't need an API key or any credential to run the available functions provided by **BARIS**. Finally, in order to fully apprehend the package, a distinction has to be made. The data.gouv API provides several **datasets which contain one or many data frames.** The unique identifier (ID) of a data set has this form : **53699934a3a729239d2051a1** while the ID of an individual data frame or resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**. 
 
@@ -138,12 +144,24 @@ BARIS comes with an integrated Addin that generates a Shiny widget allowing the 
 
 If you use the BARIS package for your work, research or teaching, I'd appreciate if you could cite it as follows: 
 
+ Mohamed El Fodil Ihaddaden (2020). BARIS: Access and
+  Import Data from the French Open Data Portal. R package
+  version 1.1.1. https://CRAN.R-project.org/package=BARIS
 
-```{r message=FALSE, warning=FALSE}
-citation("BARIS")
-```
+A BibTeX entry for LaTeX users is
 
-Finally, I appreciate any feedback, feel free to reach out at [moh_fodil](https://twitter.com/moh_fodil) or open an issue on [Github](https://github.com/feddelegrand7/BARIS/issues).
+  @Manual{,
+    title = {BARIS: Access and Import Data from the French Open Data Portal},
+    author = {Mohamed El Fodil Ihaddaden},
+    year = {2020},
+    note = {R package version 1.1.1},
+    url = {https://CRAN.R-project.org/package=BARIS},
+  }
+  
+  
+## Code of Conduct
+
+Please note that the BARIS project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms. Finally, I appreciate any feedback, feel free to reach out at [moh_fodil](https://twitter.com/moh_fodil) or open an issue on [Github](https://github.com/feddelegrand7/BARIS/issues).
 
 
 

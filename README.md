@@ -5,12 +5,13 @@
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/package=BARIS)
+![CRAN status](https://www.r-pkg.org/badges/version/BARIS)
+
+![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)
+
+<a href="https://www.buymeacoffee.com/Fodil" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 <!-- badges: end -->
-
-[![](http://cranlogs.r-pkg.org/badges/grand-total/BARIS?color=blue)](https://cran.r-project.org/package=BARIS)
 
 With **BARIS** you can exploit the [French Official Open Data
 Portal](https://www.data.gouv.fr/fr/) API directly from R. The package
@@ -57,21 +58,24 @@ the data set.
 library(BARIS)
 
 BARIS_home()
-#> # A tibble: 12 x 13
+#> # A tibble: 15 x 13
 #>    id    title organization page  views frequency temporal_cov_st~
 #>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>           
-#>  1 5eaa~ "Ind~ Ministère d~ http~ 15    unknown   <NA>            
-#>  2 5eb2~ "Sit~ Ministère d~ http~ 0     hourly    <NA>            
-#>  3 5e7d~ "Don~ Santé publi~ http~ 9     unknown   <NA>            
-#>  4 5e74~ "Don~ Santé publi~ http~ 43    unknown   <NA>            
-#>  5 5e7e~ "Don~ Santé publi~ http~ 108   daily     <NA>            
-#>  6 5ea7~ "Niv~ Santé publi~ http~ 3     daily     <NA>            
-#>  7 5ec3~ "Mes~ Unions de R~ http~ 0     unknown   <NA>            
-#>  8 5e9d~ "Don~ Etalab       http~ 1     daily     2020-12-31      
-#>  9 5ebc~ "Don~ Etalab       http~ 0     unknown   <NA>            
-#> 10 5ac4~ "Ann~ Caisse nati~ http~ 1     monthly   2019-05-01      
-#> 11 5ebc~ "Don~ Etalab       http~ 0     weekly    <NA>            
-#> 12 5e9d~ "SIN~ ADEME        http~ 0     unknown   <NA>            
+#>  1 5ed1~ "Tau~ Santé publi~ http~ 0     unknown   <NA>            
+#>  2 5ed1~ "Don~ Santé publi~ http~ 0     unknown   <NA>            
+#>  3 5ed1~ "Cap~ Santé publi~ http~ 0     unknown   <NA>            
+#>  4 5eaa~ "Ind~ Ministère d~ http~ 16    unknown   <NA>            
+#>  5 5eb2~ "Sit~ Ministère d~ http~ 1     hourly    <NA>            
+#>  6 5e7d~ "Don~ Santé publi~ http~ 9     unknown   <NA>            
+#>  7 5e74~ "Don~ Santé publi~ http~ 42    unknown   <NA>            
+#>  8 5e7e~ "Don~ Santé publi~ http~ 111   daily     <NA>            
+#>  9 5ea7~ "Niv~ Santé publi~ http~ 3     daily     <NA>            
+#> 10 5ec3~ "Mes~ Unions de R~ http~ 0     unknown   <NA>            
+#> 11 5e9d~ "Don~ Etalab       http~ 1     daily     2020-12-31      
+#> 12 5ebc~ "Don~ Etalab       http~ 0     unknown   <NA>            
+#> 13 5ac4~ "Ann~ Caisse nati~ http~ 1     monthly   2019-05-01      
+#> 14 5ebc~ "Don~ Etalab       http~ 0     weekly    <NA>            
+#> 15 5e9d~ "SIN~ ADEME        http~ 0     unknown   <NA>            
 #> # ... with 6 more variables: temporal_cov_end <chr>, created_at <chr>,
 #> #   last_modified <chr>, last_update <chr>, archived <chr>, deleted <chr>
 ```
@@ -93,23 +97,23 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #>  1 5369~ Traf~ Ministère d~ http~ 0     annual    2013-07-0~ 2016-03-04T0~
 #>  2 5369~ Déco~ OpenStreetM~ http~ 28    annual    2013-11-1~ 2020-01-02T1~
 #>  3 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#>  4 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
-#>  5 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2019-11-15T0~
+#>  4 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2019-11-15T0~
+#>  5 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
 #>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
 #>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
 #>  8 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2017-07-2~ 2019-05-09T0~
 #>  9 5dd7~ Quar~ Datactivist  http~ 0     unknown   2019-11-2~ 2019-11-22T1~
-#> 10 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2019-05-09T0~
-#> 11 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
-#> 12 5878~ Quar~ NosDonnées.~ http~ 0     unknown   2016-03-3~ 2017-07-10T0~
-#> 13 5878~ Arro~ NosDonnées.~ http~ 0     unknown   2014-03-0~ 2017-07-10T0~
-#> 14 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2018-02-0~ 2019-05-09T0~
-#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2009-06-0~ 2019-05-27T0~
-#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-12-30T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2014-05-0~ 2019-05-09T0~
-#> 20 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
+#> 10 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
+#> 11 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2019-05-09T0~
+#> 12 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2009-06-0~ 2019-05-27T0~
+#> 13 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#> 14 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2014-05-0~ 2019-05-09T0~
+#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
+#> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2018-02-0~ 2019-05-09T0~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-12-30T0~
+#> 19 5878~ Quar~ NosDonnées.~ http~ 0     unknown   2016-03-3~ 2017-07-10T0~
+#> 20 5878~ Arro~ NosDonnées.~ http~ 0     unknown   2014-03-0~ 2017-07-10T0~
 #> # ... with 3 more variables: last_update <chr>, archived <chr>, deleted <chr>
 ```
 
@@ -129,23 +133,23 @@ Marseille_data[, c("id", "title")]
 #>  1 5369a248a3a729239d206~ Trafic aéroport Marseille-Provence : passagers et mou~
 #>  2 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
 #>  3 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  4 5e5a7bc2634f413b2369e~ Caves à bière                                         
-#>  5 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
+#>  4 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
+#>  5 5e5a7bc2634f413b2369e~ Caves à bière                                         
 #>  6 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
 #>  7 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
 #>  8 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
 #>  9 5dd7a9a78b4c41277a7fb~ Quartiers de Marseille                                
-#> 10 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
-#> 11 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
-#> 12 5878ee75a3a7291484cac~ Quartiers de Marseille                                
-#> 13 5878ee29a3a7291485cac~ Arrondissements de Marseille                          
-#> 14 5cebfa889ce2e76116c3a~ Marseille - Tournages de films et séries              
-#> 15 5cebfa829ce2e76116c3a~ Marseille - Élections européennes                     
-#> 16 5cebfa839ce2e764aac3a~ Marseille - Marchés forains                           
-#> 17 5cebfa859ce2e76116c3a~ Marseille - Budget primitif                           
-#> 18 5cebfa8306e3e77c78b31~ Marseille - Bases nautiques et plages                 
-#> 19 5cebfa8706e3e77ffdb31~ Marseille - Élections législatives                    
-#> 20 5cebfa879ce2e76116c3a~ Marseille - Localisation des stations de taxis
+#> 10 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
+#> 11 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
+#> 12 5cebfa829ce2e76116c3a~ Marseille - Élections européennes                     
+#> 13 5cebfa839ce2e764aac3a~ Marseille - Marchés forains                           
+#> 14 5cebfa8306e3e77c78b31~ Marseille - Bases nautiques et plages                 
+#> 15 5cebfa8706e3e77ffdb31~ Marseille - Élections législatives                    
+#> 16 5cebfa879ce2e76116c3a~ Marseille - Localisation des stations de taxis        
+#> 17 5cebfa889ce2e76116c3a~ Marseille - Tournages de films et séries              
+#> 18 5cebfa859ce2e76116c3a~ Marseille - Budget primitif                           
+#> 19 5878ee75a3a7291484cac~ Quartiers de Marseille                                
+#> 20 5878ee29a3a7291485cac~ Arrondissements de Marseille
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -232,29 +236,23 @@ allowing the user to interact with the package in an interactive manner.
 If you use the BARIS package for your work, research or teaching, I’d
 appreciate if you could cite it as follows:
 
-``` r
-citation("BARIS")
-#> 
-#> To cite package 'BARIS' in publications use:
-#> 
-#>   Mohamed El Fodil Ihaddaden (NA). BARIS: Access and Import Data from
-#>   the French Open Data Portal. R package version 1.1.0.
-#>   https://github.com/feddelegrand7/BARIS
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Manual{,
-#>     title = {BARIS: Access and Import Data from the French Open Data Portal},
-#>     author = {Mohamed El Fodil Ihaddaden},
-#>     note = {R package version 1.1.0},
-#>     url = {https://github.com/feddelegrand7/BARIS},
-#>   }
-#> 
-#> ATTENTION: This citation information has been auto-generated from the
-#> package DESCRIPTION file and may need manual editing, see
-#> 'help("citation")'.
-```
+Mohamed El Fodil Ihaddaden (2020). BARIS: Access and Import Data from
+the French Open Data Portal. R package version 1.1.1.
+<https://CRAN.R-project.org/package=BARIS>
 
+A BibTeX entry for LaTeX users is
+
+@Manual{, title = {BARIS: Access and Import Data from the French Open
+Data Portal}, author = {Mohamed El Fodil Ihaddaden}, year = {2020}, note
+= {R package version 1.1.1}, url =
+{<https://CRAN.R-project.org/package=BARIS>}, }
+
+## Code of Conduct
+
+Please note that the BARIS project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
 Finally, I appreciate any feedback, feel free to reach out at
 [moh\_fodil](https://twitter.com/moh_fodil) or open an issue on
 [Github](https://github.com/feddelegrand7/BARIS/issues).
