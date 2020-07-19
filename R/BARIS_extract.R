@@ -107,7 +107,6 @@ BARIS_extract <- function(resourceId, format) {
 
   } else if (format == "geojson"){
 
-
     temp <- tempfile()
     temp2 <- tempfile()
 
@@ -121,7 +120,6 @@ BARIS_extract <- function(resourceId, format) {
 
     unlink(c(temp, temp2))
 
-
   } else if(format == "json") {
 
     df_json <- fromJSON(final_url)
@@ -130,7 +128,6 @@ BARIS_extract <- function(resourceId, format) {
     return(df_json)
 
   } else {
-
 
     stop("The available extraction capabilities are limited to
       json, csv, text, xls, xlsx, xml, geojson, and shp files. And for downloading, only PDF and ZIP")
