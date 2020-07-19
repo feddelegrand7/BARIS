@@ -19,9 +19,6 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/BARIS)](https://cran.r-
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 
-[![Travis build
-status](https://travis-ci.com/feddelegrand7/BARIS.svg?branch=master)](https://travis-ci.com/feddelegrand7/BARIS)
-
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/BARIS)
 <!-- badges: end -->
