@@ -76,7 +76,7 @@ The data is quite condensed so you should use the `View()` or `DT::datatable()` 
 The `BARIS_search()` function allows you to search for a specific data set. Suppose we're curious about the city of Marseille. 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 BARIS_search(query = "Marseille", n_pages = 20)
 
@@ -84,7 +84,7 @@ BARIS_search(query = "Marseille", n_pages = 20)
 
 The **n_page** argument is used to specify the number of pages to search for according to the pagination system of the API, by default its value is equal to 20. Now, in order to choose a dataset, let's have a look at two columns, the ID and the title of each dataset. 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 Marseille_data <- BARIS_search(query = "Marseille", n_pages = 20)
 
@@ -101,7 +101,7 @@ Suppose we're interested in the dataset entitled **Marseille - Monuments histori
 
 `BARIS_explain()` returns a description of a dataset. It has one argument which is the ID of the dataset of interest. 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 
@@ -115,7 +115,7 @@ The description is in French but even non-French speakers can use this function 
 As mentioned previously, each data set contains one or several data frames or as the API call them **resources**. The `BARIS_resources()` function allows you to list all the available resources within a determined data set. 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments historiques" ID
 
@@ -133,7 +133,7 @@ The `BARIS_extract()` function allows you to extract the needed resource into yo
 As an example, let us extract the above listed csv file: *MARSEILLE_MONUMENTS_HISTORIQUES_2018.csv*:
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
 

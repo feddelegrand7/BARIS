@@ -74,7 +74,7 @@ BARIS_home()
 #>  1 5eeb~ Répe~ France comp~ http~ 0     weekly    <NA>            
 #>  2 5efa~ Muni~ Ministère d~ http~ 0     punctual  <NA>            
 #>  3 5eda~ Elec~ Ministère d~ http~ 0     unknown   <NA>            
-#>  4 5ee9~ Indi~ Ministère d~ http~ 0     weekly    <NA>            
+#>  4 5ee9~ Indi~ Ministère d~ http~ 1     weekly    <NA>            
 #>  5 5e7e~ Donn~ Santé publi~ http~ 119   daily     <NA>            
 #>  6 5eb2~ Site~ Ministère d~ http~ 1     hourly    <NA>            
 #>  7 5ecf~ Base~ ADEME        http~ 0     unknown   <NA>            
@@ -98,13 +98,6 @@ set. Suppose we’re curious about the city of Marseille.
 ``` r
 
 BARIS_search(query = "Marseille", n_pages = 20)
-#> Warning: `...` is not empty.
-#> 
-#> We detected these problematic arguments:
-#> * `needs_dots`
-#> 
-#> These dots only exist to allow future extensions and should be empty.
-#> Did you misspecify an argument?
 #> # A tibble: 20 x 11
 #>    id    title organization page  views frequency created_at last_modified
 #>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>      <chr>        
@@ -113,20 +106,20 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #>  3 5369~ Déco~ OpenStreetM~ http~ 28    annual    2013-11-1~ 2020-01-02T1~
 #>  4 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
 #>  5 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2019-11-15T0~
-#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
+#>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
+#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2019-11-15T0~
 #>  8 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
 #>  9 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2017-07-2~ 2019-05-09T0~
 #> 10 5dd7~ Quar~ Datactivist  http~ 0     unknown   2019-11-2~ 2019-11-22T1~
 #> 11 5878~ Arro~ NosDonnées.~ http~ 0     unknown   2014-03-0~ 2017-07-10T0~
 #> 12 5878~ Quar~ NosDonnées.~ http~ 0     unknown   2016-03-3~ 2017-07-10T0~
-#> 13 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
-#> 14 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2020-06-29T0~
-#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-12-30T0~
+#> 13 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2020-06-29T0~
+#> 14 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
+#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2011-06-1~ 2019-05-09T0~
+#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2018-08-22T0~
 #> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2018-02-0~ 2019-05-09T0~
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
+#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2011-06-1~ 2019-05-09T0~
 #> 20 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2014-05-0~ 2019-05-09T0~
 #> # ... with 3 more variables: last_update <chr>, archived <chr>, deleted <chr>
 ```
@@ -141,13 +134,6 @@ look at two columns, the ID and the title of each dataset.
 Marseille_data <- BARIS_search(query = "Marseille", n_pages = 20)
 
 Marseille_data[, c("id", "title")]
-#> Warning: `...` is not empty.
-#> 
-#> We detected these problematic arguments:
-#> * `needs_dots`
-#> 
-#> These dots only exist to allow future extensions and should be empty.
-#> Did you misspecify an argument?
 #> # A tibble: 20 x 2
 #>    id                     title                                                 
 #>    <chr>                  <chr>                                                 
@@ -156,20 +142,20 @@ Marseille_data[, c("id", "title")]
 #>  3 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
 #>  4 5e5a7bc2634f413b2369e~ Caves à bière                                         
 #>  5 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  6 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
-#>  7 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
+#>  6 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
+#>  7 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
 #>  8 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
 #>  9 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
 #> 10 5dd7a9a78b4c41277a7fb~ Quartiers de Marseille                                
 #> 11 5878ee29a3a7291485cac~ Arrondissements de Marseille                          
 #> 12 5878ee75a3a7291484cac~ Quartiers de Marseille                                
-#> 13 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
-#> 14 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
-#> 15 5cebfa839ce2e764aac3a~ Marseille - Marchés forains                           
-#> 16 5cebfa859ce2e76116c3a~ Marseille - Budget primitif                           
-#> 17 5cebfa8306e3e77c78b31~ Marseille - Bases nautiques et plages                 
-#> 18 5cebfa889ce2e76116c3a~ Marseille - Tournages de films et séries              
-#> 19 5cebfa879ce2e76116c3a~ Marseille - Localisation des stations de taxis        
+#> 13 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
+#> 14 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
+#> 15 5cebfa8306e3e77c78b31~ Marseille - Écoles élémentaires                       
+#> 16 5cebfa869ce2e764aac3a~ Marseille - Lieux culturels                           
+#> 17 5cebfa869ce2e76116c3a~ Marseille - Équipements sociaux                       
+#> 18 5cebfa839ce2e76116c3a~ Marseille - Wifi public                               
+#> 19 5cebfa849ce2e764aac3a~ Marseille - Écoles maternelles                        
 #> 20 5cebfa8706e3e77ffdb31~ Marseille - Élections législatives
 ```
 
@@ -204,13 +190,6 @@ determined data set.
 ``` r
 
 BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments historiques" ID
-#> Warning: `...` is not empty.
-#> 
-#> We detected these problematic arguments:
-#> * `needs_dots`
-#> 
-#> These dots only exist to allow future extensions and should be empty.
-#> Did you misspecify an argument?
 #> # A tibble: 2 x 6
 #>   id         title       format published   url             description         
 #>   <chr>      <chr>       <chr>  <chr>       <chr>           <chr>               
@@ -236,13 +215,6 @@ As an example, let us extract the above listed csv file:
 ``` r
 
 BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
-#> Warning: `...` is not empty.
-#> 
-#> We detected these problematic arguments:
-#> * `needs_dots`
-#> 
-#> These dots only exist to allow future extensions and should be empty.
-#> Did you misspecify an argument?
 #> # A tibble: 80 x 10
 #>    n_base_merimee date_de_protect~ denomination adresse code_postal
 #>    <chr>          <chr>            <chr>        <chr>         <int>
