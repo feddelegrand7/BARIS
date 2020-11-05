@@ -6,19 +6,13 @@
 <!-- badges: start -->
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
-
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/BARIS)
 <!-- badges: end -->
