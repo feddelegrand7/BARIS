@@ -17,19 +17,11 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/BARIS)](https://cran.r-project.org/package=BARIS)
-
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
-
-
 [![R badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/BARIS)
 <!-- badges: end -->
 
@@ -143,6 +135,8 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 # BARIS Addin
 
 BARIS comes with an integrated Addin that generates a Shiny widget allowing the user to interact with the package in an interactive manner. 
+
+![](man/figures/gif_baris.gif)
 
 
 
