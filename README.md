@@ -17,7 +17,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/BARIS)](https://cran.r-
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/BARIS)
 <!-- badges: end -->
 
-With **BARIS** you can exploit the [French Official Open Data
+With **BARIS** you can interact with the [French Official Open Data
 Portal](https://www.data.gouv.fr/fr/) API directly from R. The package
 offers several capabilities, from listing the available data sets to
 extracting the needed resources. Nevertheless, there are many features
