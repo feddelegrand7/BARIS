@@ -6,19 +6,13 @@
 <!-- badges: start -->
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/BARIS)](https://cran.r-project.org/package=BARIS)
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
-
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/BARIS)
 <!-- badges: end -->
@@ -103,8 +97,8 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #>  3 5369~ Traf~ Ministère d~ http~ 0     annual    2013-07-0~ 2016-03-04T0~
 #>  4 5f03~ Coll~ Ville de Ma~ http~ 0     unknown   2017-03-2~ 2019-05-09T0~
 #>  5 5369~ Déco~ OpenStreetM~ http~ 28    annual    2013-11-1~ 2020-01-02T1~
-#>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#>  7 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
+#>  6 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
+#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
 #>  8 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
 #>  9 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2020-08-04T0~
 #> 10 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2017-07-2~ 2020-09-09T0~
@@ -139,8 +133,8 @@ Marseille_data[, c("id", "title")]
 #>  3 5369a248a3a729239d206~ Trafic aéroport Marseille-Provence : passagers et mou~
 #>  4 5f031bed84d60df5d5d05~ Collections du Musée ZIEM                             
 #>  5 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
-#>  6 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  7 5e5a7bc2634f413b2369e~ Caves à bière                                         
+#>  6 5e5a7bc2634f413b2369e~ Caves à bière                                         
+#>  7 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
 #>  8 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
 #>  9 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
 #> 10 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
@@ -234,6 +228,13 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 
 BARIS comes with an integrated Addin that generates a Shiny widget
 allowing the user to interact with the package in an interactive manner.
+You can trigger the addin from the `Addins` menu in `RStudio` or you can
+run:
+
+``` r
+
+BARIS:::BARIS_ui()
+```
 
 ![](man/figures/gif_baris.gif)
 

@@ -134,7 +134,15 @@ BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv
 
 # BARIS Addin
 
-BARIS comes with an integrated Addin that generates a Shiny widget allowing the user to interact with the package in an interactive manner. 
+BARIS comes with an integrated Addin that generates a Shiny widget allowing the user to interact with the package in an interactive manner. You can trigger the addin from the `Addins` menu in `RStudio` or you can run:
+
+
+```{r,eval=FALSE}
+
+BARIS:::BARIS_ui()
+
+```
+
 
 ![](man/figures/gif_baris.gif)
 
