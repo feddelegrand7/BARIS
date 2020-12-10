@@ -7,3 +7,4 @@
 ^CODE_OF_CONDUCT\.md$
 ^\.travis\.yml$
 ^man/figures/gif_baris\.gif$
+^\.github$

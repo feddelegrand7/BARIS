@@ -15,6 +15,8 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/BARIS)](https://cran.r-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 [![R
 badge](https://img.shields.io/badge/Build%20with-♥%20and%20R-blue)](https://github.com/feddelegrand7/BARIS)
+[![R build
+status](https://github.com/feddelegrand7/BARIS/workflows/R-CMD-check/badge.svg)](https://github.com/feddelegrand7/BARIS/actions)
 <!-- badges: end -->
 
 With **BARIS** you can interact with the [French Official Open Data
@@ -38,7 +40,6 @@ You can install the BARIS package from
 [CRAN](https://cran.r-project.org/) with:
 
 ``` r
-
 install.packages("BARIS")
 ```
 
@@ -46,7 +47,6 @@ You can also install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
-
 devtools::install_github("feddelegrand7/BARIS")
 ```
 
@@ -73,7 +73,7 @@ BARIS_home()
 #> 6 5e9d~ Donn~ Etalab       http~ 1     daily     2020-12-31      
 #> 7 5ed1~ Donn~ Santé publi~ http~ 22    daily     <NA>            
 #> 8 5f71~ AGRI~ ADEME        http~ 0     unknown   <NA>            
-#> 9 5f69~ Donn~ Etalab       http~ 0     daily     <NA>            
+#> 9 5f69~ Donn~ Ministère d~ http~ 0     daily     <NA>            
 #> # ... with 6 more variables: temporal_cov_end <chr>, created_at <chr>,
 #> #   last_modified <chr>, last_update <chr>, archived <chr>, deleted <chr>
 ```
@@ -87,7 +87,6 @@ The `BARIS_search()` function allows you to search for a specific data
 set. Suppose we’re curious about the city of Marseille.
 
 ``` r
-
 BARIS_search(query = "Marseille", n_pages = 20)
 #> # A tibble: 20 x 11
 #>    id    title organization page  views frequency created_at last_modified
@@ -97,21 +96,21 @@ BARIS_search(query = "Marseille", n_pages = 20)
 #>  3 5369~ Traf~ Ministère d~ http~ 0     annual    2013-07-0~ 2016-03-04T0~
 #>  4 5f03~ Coll~ Ville de Ma~ http~ 0     unknown   2017-03-2~ 2019-05-09T0~
 #>  5 5369~ Déco~ OpenStreetM~ http~ 28    annual    2013-11-1~ 2020-01-02T1~
-#>  6 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
-#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#>  8 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
-#>  9 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2020-08-04T0~
+#>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2020-11-19T0~
+#>  8 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
+#>  9 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
 #> 10 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2017-07-2~ 2020-09-09T0~
 #> 11 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2020-08-03T0~
 #> 12 5dd7~ Quar~ Datactivist  http~ 0     unknown   2019-11-2~ 2019-11-22T1~
-#> 13 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2020-06-29T0~
-#> 14 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
-#> 15 5878~ Arro~ NosDonnées.~ http~ 0     unknown   2014-03-0~ 2017-07-10T0~
-#> 16 5878~ Quar~ NosDonnées.~ http~ 0     unknown   2016-03-3~ 2017-07-10T0~
-#> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2011-06-1~ 2019-05-09T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2011-06-1~ 2019-05-09T0~
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2018-08-22T0~
-#> 20 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
+#> 13 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
+#> 14 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2020-06-29T0~
+#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2020-08-03T0~
+#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2020-08-04T0~
+#> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
+#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2014-05-0~ 2019-05-09T0~
+#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
+#> 20 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2009-06-0~ 2019-05-27T0~
 #> # ... with 3 more variables: last_update <chr>, archived <chr>, deleted <chr>
 ```
 
@@ -121,7 +120,6 @@ value is equal to 20. Now, in order to choose a dataset, let’s have a
 look at two columns, the ID and the title of each dataset.
 
 ``` r
-
 Marseille_data <- BARIS_search(query = "Marseille", n_pages = 20)
 
 Marseille_data[, c("id", "title")]
@@ -133,21 +131,21 @@ Marseille_data[, c("id", "title")]
 #>  3 5369a248a3a729239d206~ Trafic aéroport Marseille-Provence : passagers et mou~
 #>  4 5f031bed84d60df5d5d05~ Collections du Musée ZIEM                             
 #>  5 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
-#>  6 5e5a7bc2634f413b2369e~ Caves à bière                                         
-#>  7 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  8 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
-#>  9 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
+#>  6 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
+#>  7 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
+#>  8 5e5a7bc2634f413b2369e~ Caves à bière                                         
+#>  9 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
 #> 10 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
 #> 11 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
 #> 12 5dd7a9a78b4c41277a7fb~ Quartiers de Marseille                                
-#> 13 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
-#> 14 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
-#> 15 5878ee29a3a7291485cac~ Arrondissements de Marseille                          
-#> 16 5878ee75a3a7291484cac~ Quartiers de Marseille                                
-#> 17 5cebfa8306e3e77c78b31~ Marseille - Écoles élémentaires                       
-#> 18 5cebfa849ce2e764aac3a~ Marseille - Écoles maternelles                        
-#> 19 5cebfa869ce2e764aac3a~ Marseille - Lieux culturels                           
-#> 20 5cebfa839ce2e76116c3a~ Marseille - Wifi public
+#> 13 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
+#> 14 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
+#> 15 5cebfa859ce2e76116c3a~ Marseille - Budget primitif                           
+#> 16 5cebfa8306e3e77c78b31~ Marseille - Bases nautiques et plages                 
+#> 17 5cebfa879ce2e76116c3a~ Marseille - Localisation des stations de taxis        
+#> 18 5cebfa8706e3e77ffdb31~ Marseille - Élections législatives                    
+#> 19 5cebfa839ce2e764aac3a~ Marseille - Marchés forains                           
+#> 20 5cebfa829ce2e76116c3a~ Marseille - Élections européennes
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -161,7 +159,6 @@ and we want to know more about this data. In this case, the
 argument which is the ID of the dataset of interest.
 
 ``` r
-
 BARIS_explain("5cebfa8306e3e77ffdb31ef5")
 #> [1] "Monuments historiques situés sur le territoire de Marseille, avec adresse, numéro de base Mérimée (base de données du Ministère de la Culture recensant les monuments historiques de toute la France) et points de géolocalisation"
 ```
@@ -179,7 +176,6 @@ function allows you to list all the available resources within a
 determined data set.
 
 ``` r
-
 BARIS_resources("5cebfa8306e3e77ffdb31ef5") # The "Marseille - Monuments historiques" ID
 #> # A tibble: 2 x 6
 #>   id         title       format published   url             description         
@@ -204,7 +200,6 @@ As an example, let us extract the above listed csv file:
 *MARSEILLE\_MONUMENTS\_HISTORIQUES\_2018.csv*:
 
 ``` r
-
 BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
 #> # A tibble: 80 x 10
 #>    n_base_merimee date_de_protect~ denomination adresse code_postal
@@ -232,7 +227,6 @@ You can trigger the addin from the `Addins` menu in `RStudio` or you can
 run:
 
 ``` r
-
 BARIS:::BARIS_ui()
 ```
 
