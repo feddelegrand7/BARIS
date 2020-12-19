@@ -33,10 +33,6 @@ BARIS_explain <- function(datasetId) {
 
   Encoding(df_explain$description) <- "UTF-8"
 
-  df_explain$description <- df_explain$description %>%
-    str_replace_all(c("\n" = " ","\r" = " ", "&#x27;" = "'")) %>%
-    str_trim()
-
 
   return(df_explain$description)
 }
