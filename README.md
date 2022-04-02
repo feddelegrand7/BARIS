@@ -63,17 +63,17 @@ library(BARIS)
 
 BARIS_home()
 #> # A tibble: 9 x 13
-#>   id    title organization page  views frequency temporal_cov_st~
-#>   <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>           
-#> 1 5f8f~ Donn~ Santé publi~ http~ 0     daily     <NA>            
-#> 2 5f73~ Indi~ Santé publi~ http~ 0     daily     <NA>            
-#> 3 5ee9~ Indi~ Ministère d~ http~ 2     daily     <NA>            
-#> 4 5e7e~ Donn~ Santé publi~ http~ 133   daily     <NA>            
-#> 5 5ee2~ Diag~ ADEME        http~ 0     unknown   <NA>            
-#> 6 5e9d~ Donn~ Etalab       http~ 1     daily     2020-12-31      
-#> 7 5ed1~ Donn~ Santé publi~ http~ 22    daily     <NA>            
-#> 8 5f71~ AGRI~ ADEME        http~ 0     unknown   <NA>            
-#> 9 5f69~ Donn~ Ministère d~ http~ 0     daily     <NA>            
+#>   id      title      organization     page      views frequency temporal_cov_st~
+#>   <chr>   <chr>      <chr>            <chr>     <chr> <chr>     <chr>           
+#> 1 6246ac~ Temps de ~ https://static.~ https://~ 47    irregular 2022-03-07      
+#> 2 623dd1~ Déclarati~ https://static.~ https://~ 30    unknown   <NA>            
+#> 3 541014~ Prix des ~ https://static.~ https://~ 16053 unknown   <NA>            
+#> 4 61f3ba~ Transitio~ https://static.~ https://~ 11    punctual  <NA>            
+#> 5 620bc1~ Liste des~ https://static.~ https://~ 1     punctual  2023-12-31      
+#> 6 6151bd~ Feuilles ~ https://static.~ https://~ 1481  annual    <NA>            
+#> 7 5ff5e6~ Baromètre~ https://static.~ https://~ 3445  punctual  <NA>            
+#> 8 60190d~ Synthèse ~ https://static.~ https://~ 42012 daily     <NA>            
+#> 9 61a73d~ Index Ega~ https://static.~ https://~ 132   daily     <NA>            
 #> # ... with 6 more variables: temporal_cov_end <chr>, created_at <chr>,
 #> #   last_modified <chr>, last_update <chr>, archived <chr>, deleted <chr>
 ```
@@ -87,65 +87,32 @@ The `BARIS_search()` function allows you to search for a specific data
 set. Suppose we’re curious about the city of Marseille.
 
 ``` r
-BARIS_search(query = "Marseille", n_pages = 20)
-#> # A tibble: 20 x 11
-#>    id    title organization page  views frequency created_at last_modified
-#>    <chr> <chr> <chr>        <chr> <chr> <chr>     <chr>      <chr>        
-#>  1 5f65~ Mars~ Ville de Ma~ http~ 0     unknown   2020-07-1~ 2020-11-04T0~
-#>  2 5f4e~ Mars~ Ville de Ma~ http~ 0     unknown   2020-09-0~ 2020-09-01T0~
-#>  3 5369~ Traf~ Ministère d~ http~ 0     annual    2013-07-0~ 2016-03-04T0~
-#>  4 5f03~ Coll~ Ville de Ma~ http~ 0     unknown   2017-03-2~ 2019-05-09T0~
-#>  5 5369~ Déco~ OpenStreetM~ http~ 28    annual    2013-11-1~ 2020-01-02T1~
-#>  6 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#>  7 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-2~ 2020-11-19T0~
-#>  8 5e5a~ Cave~ <NA>         http~ 0     irregular 2020-02-2~ 2020-03-01T1~
-#>  9 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2015-07-1~ 2019-05-09T0~
-#> 10 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2017-07-2~ 2020-09-09T0~
-#> 11 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2020-08-03T0~
-#> 12 5dd7~ Quar~ Datactivist  http~ 0     unknown   2019-11-2~ 2019-11-22T1~
-#> 13 5e87~ Mars~ Ville de Ma~ http~ 0     unknown   2020-04-0~ 2020-04-03T0~
-#> 14 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2013-10-2~ 2020-06-29T0~
-#> 15 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2020-08-03T0~
-#> 16 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2020-08-04T0~
-#> 17 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-11-2~ 2019-05-09T0~
-#> 18 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2014-05-0~ 2019-05-09T0~
-#> 19 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2012-12-0~ 2019-05-09T0~
-#> 20 5ceb~ Mars~ Ville de Ma~ http~ 0     unknown   2009-06-0~ 2019-05-27T0~
-#> # ... with 3 more variables: last_update <chr>, archived <chr>, deleted <chr>
-```
-
-The **n\_page** argument is used to specify the number of pages to
-search for according to the pagination system of the API, by default its
-value is equal to 20. Now, in order to choose a dataset, let’s have a
-look at two columns, the ID and the title of each dataset.
-
-``` r
-Marseille_data <- BARIS_search(query = "Marseille", n_pages = 20)
+Marseille_data <- BARIS_search(query = "Marseille", page_number = 1, page_size = 20)
 
 Marseille_data[, c("id", "title")]
 #> # A tibble: 20 x 2
-#>    id                     title                                                 
-#>    <chr>                  <chr>                                                 
-#>  1 5f654cd6e39b90e17b802~ Marseille - Photographies                             
-#>  2 5f4ee104d32ad6319bb72~ Marseille - Lieux de distribution de masques          
-#>  3 5369a248a3a729239d206~ Trafic aéroport Marseille-Provence : passagers et mou~
-#>  4 5f031bed84d60df5d5d05~ Collections du Musée ZIEM                             
-#>  5 53699233a3a729239d203~ Découpage administratif communal français issu d'Open~
-#>  6 5cebfa8506e3e77ffdb31~ Marseille - Cimetières                                
-#>  7 5cebfa869ce2e76116c3a~ Marseille - Délibérations                             
-#>  8 5e5a7bc2634f413b2369e~ Caves à bière                                         
-#>  9 5cebfa8706e3e77c78b31~ Marseille - Crèches                                   
-#> 10 5cebfa869ce2e764aac3a~ Marseille - Subventions                               
-#> 11 5cebfa839ce2e76116c3a~ Marseille - Élus                                      
-#> 12 5dd7a9a78b4c41277a7fb~ Quartiers de Marseille                                
-#> 13 5e87cef997cf8d9b8cd10~ Marseille - COVID19 - crèches ouvertes                
-#> 14 5cebfa8306e3e77ffdb31~ Marseille - Monuments historiques                     
-#> 15 5cebfa859ce2e76116c3a~ Marseille - Budget primitif                           
-#> 16 5cebfa8306e3e77c78b31~ Marseille - Bases nautiques et plages                 
-#> 17 5cebfa879ce2e76116c3a~ Marseille - Localisation des stations de taxis        
-#> 18 5cebfa8706e3e77ffdb31~ Marseille - Élections législatives                    
-#> 19 5cebfa839ce2e764aac3a~ Marseille - Marchés forains                           
-#> 20 5cebfa829ce2e76116c3a~ Marseille - Élections européennes
+#>    id                       title                            
+#>    <chr>                    <chr>                            
+#>  1 5cebfa839ce2e76116c3af0d Marseille - Élus                 
+#>  2 5cebfa8506e3e77ffdb31ef8 Marseille - Cimetières           
+#>  3 5cebfa869ce2e76116c3af11 Marseille - Délibérations        
+#>  4 5cebfa869ce2e764aac3af2b Marseille - Subventions          
+#>  5 5cebfa8706e3e77c78b31f0a Marseille - Crèches              
+#>  6 5f654cd6e39b90e17b8021e3 Marseille - Photographies        
+#>  7 604ff6a2b0a782adba71fa22 Marseille - Biodiversité         
+#>  8 604ff6ddbc5a324a0c7ce5a7 Marseille - Eclairage            
+#>  9 53698f14a3a729239d203643 Arrondissements de Marseille     
+#> 10 5878ee29a3a7291485cac7b2 Arrondissements de Marseille     
+#> 11 5878ee75a3a7291484cac81f Quartiers de Marseille           
+#> 12 5cebfa8206e3e77ffdb31ef4 Marseille - Élections municipales
+#> 13 5cebfa829ce2e76116c3af0c Marseille - Élections européennes
+#> 14 5cebfa8306e3e77c78b31f05 Marseille - Écoles élémentaires  
+#> 15 5cebfa8306e3e77ffdb31ef5 Marseille - Monuments historiques
+#> 16 5cebfa8306e3e77ffdb31ef6 Marseille - Compte administratif 
+#> 17 5cebfa839ce2e76116c3af0e Marseille - Wifi public          
+#> 18 5cebfa839ce2e764aac3af27 Marseille - Marchés forains      
+#> 19 5cebfa8406e3e77ffdb31ef7 Marseille - Équipements sportifs 
+#> 20 5cebfa849ce2e764aac3af28 Marseille - Écoles maternelles
 ```
 
 Suppose we’re interested in the dataset entitled **Marseille - Monuments
@@ -202,18 +169,18 @@ As an example, let us extract the above listed csv file:
 ``` r
 BARIS_extract(resourceId = "59ea7bba-f38a-4d75-b85f-2d1955050e53", format = "csv")
 #> # A tibble: 80 x 10
-#>    n_base_merimee date_de_protect~ denomination adresse code_postal
-#>    <chr>          <chr>            <chr>        <chr>         <int>
-#>  1 PA00081336     Classement : li~ Ancienne ég~ "/"           13002
-#>  2 PA00081340     Classement: 13/~ Eglise Sain~ "Espla~       13002
-#>  3 PA00081331     Classement: 29/~ Chapelle et~ "2, Ru~       13002
-#>  4 PA00081344     Classement: 16/~ Fort Saint-~ ""            13002
-#>  5 PA00081325     Inscription : 2~ Les deux bâ~ "Quai ~       13002
-#>  6 PA00081334     Inscription : 0~ Clocher des~ "Monté~       13002
-#>  7 PA00081348     Classement: 12/~ Hôtel Davie~ "Place~       13002
-#>  8 PA00081363     Classement: 02/~ Maison dite~ "27, G~       13002
-#>  9 PA00081349     Inscription : 1~ Hôtel-Dieu-~ "6, Pl~       13002
-#> 10 PA00081354     Classement: 30/~ Hôtel de Vi~ "Quai ~       13002
+#>    n_base_merimee date_de_protection_~ denomination        adresse   code_postal
+#>    <chr>          <chr>                <chr>               <chr>           <int>
+#>  1 PA00081336     Classement : liste ~ Ancienne église de~ "/"             13002
+#>  2 PA00081340     Classement: 13/09/1~ Eglise Saint-Laure~ "Esplana~       13002
+#>  3 PA00081331     Classement: 29/01/1~ Chapelle et Hospic~ "2, Rue ~       13002
+#>  4 PA00081344     Classement: 16/06/1~ Fort Saint-Jean     ""              13002
+#>  5 PA00081325     Inscription : 23/11~ Les deux bâtiments~ "Quai du~       13002
+#>  6 PA00081334     Inscription : 07/07~ Clocher des Accoul~ "Montée ~       13002
+#>  7 PA00081348     Classement: 12/01/1~ Hôtel Daviel (anci~ "Place D~       13002
+#>  8 PA00081363     Classement: 02/05/1~ Maison dite de l’É~ "27, Gra~       13002
+#>  9 PA00081349     Inscription : 14/10~ Hôtel-Dieu- Façade~ "6, Plac~       13002
+#> 10 PA00081354     Classement: 30/04/1~ Hôtel de Ville      "Quai du~       13002
 #> # ... with 70 more rows, and 5 more variables: proprietaire_du_monument <chr>,
 #> #   epoque_de_construction <chr>, date_de_construction <chr>, longitude <dbl>,
 #> #   latitude <dbl>

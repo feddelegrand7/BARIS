@@ -4,12 +4,15 @@
 \alias{BARIS_search}
 \title{Searching for a data set}
 \usage{
-BARIS_search(query, n_pages = 20)
+BARIS_search(query, page_number = 1, page_size = 20)
 }
 \arguments{
 \item{query}{a character string defining the research.}
 
-\item{n_pages}{number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation}
+\item{page_number}{numeric value denoting which page to search for, defaults to 1}
+
+\item{page_size}{numeric value, for a specific page (see \code{page_number}), how
+many results do you want to query. Defaults to 20}
 }
 \value{
 a character string

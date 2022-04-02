@@ -1,4 +1,34 @@
 
+is_response_successfull <- function(url) {
+
+  response <- httr::GET(
+    url = url
+  )
+
+  there_is_an_error <- httr::http_error(response)
+
+  if (there_is_an_error) {
+
+    message <- httr::http_status(response)
+    message <- message$message
+
+    message(
+      glue::glue(
+        "Something went wrong, here the response message:
+      <<< {message} >>>
+
+      returning NULL
+      "
+      )
+    )
+    return(FALSE)
+  }
+
+  return(TRUE)
+
+}
+
+
 #' Sets memoise cache function
 #'
 #' Uses the memoise package to set a cache function for jsonlite::fromJSON

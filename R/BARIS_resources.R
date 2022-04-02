@@ -23,6 +23,12 @@ BARIS_resources <- function(datasetId) {
 
   final_url <- paste("https://www.data.gouv.fr/api/1/datasets/", datasetId, "/", sep = "")
 
+  response_status <- is_response_successfull(final_url)
+
+  if (!response_status) {
+    return(NULL)
+  }
+
   # set memoise cache fct
   mem_fromJSON <- BARIS_set_fromJSON()
 

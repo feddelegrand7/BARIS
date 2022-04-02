@@ -71,20 +71,12 @@ The `BARIS_search()` function allows you to search for a specific data set. Supp
 
 ```{r message=FALSE, warning=FALSE}
 
-BARIS_search(query = "Marseille", n_pages = 20)
-
-```
-
-The **n_page** argument is used to specify the number of pages to search for according to the pagination system of the API, by default its value is equal to 20. Now, in order to choose a dataset, let's have a look at two columns, the ID and the title of each dataset. 
-
-```{r message=FALSE, warning=FALSE}
-
-Marseille_data <- BARIS_search(query = "Marseille", n_pages = 20)
+Marseille_data <- BARIS_search(query = "Marseille", page_number = 1, page_size = 20)
 
 Marseille_data[, c("id", "title")]
 
-
 ```
+
 
 Suppose we're interested in the dataset entitled **Marseille - Monuments historiques** with its corresponding ID:
 **5cebfa8306e3e77ffdb31ef5** and we want to know more about this data. In this case, the `BARIS_explain()` function can be useful. 

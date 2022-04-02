@@ -4,7 +4,9 @@
 #'
 #'
 #' @param query a character string defining the research.
-#' @param n_pages number of pages to consider when searching (default to 20). For more, information check out the pagination section of the data.gouv API documentation
+#' @param page_number numeric value denoting which page to search for, defaults to 1
+#' @param page_size numeric value, for a specific page (see \code{page_number}), how
+#' many results do you want to query. Defaults to 20
 #' @return a character string
 #' @examples \donttest{
 #'
@@ -13,14 +15,9 @@
 #' @importFrom dplyr as_tibble
 #' @importFrom stringr str_replace_all
 #' @importFrom stringi stri_trans_general
-#' @importFrom checkmate assert_character
 
 
-BARIS_search <- function(query, n_pages = 20) {
-
-  checkmate::assert_character(query)
-  checkmate::assertCount(n_pages)
-
+BARIS_search <- function(query, page_number = 1, page_size = 20) {
 
   base_url <- "https://www.data.gouv.fr/api/1/datasets/?q="
 
@@ -30,11 +27,15 @@ BARIS_search <- function(query, n_pages = 20) {
 
   search <- stri_trans_general(search, id = "Latin-ASCII")
 
-  complement <- "&page=0&page_size="
+  complement <- glue::glue("&page={page_number}&page_size={page_size}")
 
-  size = n_pages
+  final_url <- paste0(base_url, search, complement)
 
-  final_url <- paste(base_url, search, complement, size, sep = "")
+  response_status <- is_response_successfull(final_url)
+
+  if (!response_status) {
+    return(NULL)
+  }
 
   # set memoise cache fct
   mem_fromJSON <- BARIS_set_fromJSON()

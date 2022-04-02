@@ -15,6 +15,12 @@ BARIS_home <- function() {
 
   my_url <- "https://www.data.gouv.fr/api/1/site/home/datasets/"
 
+  response_status <- is_response_successfull(my_url)
+
+  if (!response_status) {
+    return(NULL)
+  }
+
   # set memoise cache fct
   mem_fromJSON <- BARIS_set_fromJSON()
 

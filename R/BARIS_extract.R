@@ -39,6 +39,11 @@ BARIS_extract <- function(resourceId, format) {
 
   final_url <- paste(basic_url, resourceId, sep = "")
 
+  response_status <- is_response_successfull(final_url)
+
+  if (!response_status) {
+    return(NULL)
+  }
 
   #### Reading CSV files ############################################################
 

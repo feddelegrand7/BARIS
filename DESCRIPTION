@@ -1,7 +1,7 @@
 Package: BARIS
 Type: Package
 Title: Access and Import Data from the French Open Data Portal 
-Version: 1.1.1
+Version: 1.1.2
 Author: Mohamed El Fodil Ihaddaden
 Maintainer: Mohamed El Fodil Ihaddaden <ihaddaden.fodeil@gmail.com>
 Description: Allows the user to access and import data from the rich French open data portal through the provided free API <https://doc.data.gouv.fr/api/reference/>. 
@@ -31,8 +31,9 @@ Imports:
     shiny,
     miniUI,
     rstudioapi,
-    checkmate
+    checkmate,
+    glue
 Suggests: 
     knitr,
     rmarkdown
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
