@@ -44,6 +44,12 @@ BARIS_search <- function(query, page_number = 1, page_size = 20) {
 
   df_info <- df_info$data
 
+  if (is.null(df_info) || length(df_info) == 0) {
+    message("No data found for the requested search,
+            returning NULL")
+    return(NULL)
+  }
+
   id                 <- df_info$id
 
   title              <- df_info$title

@@ -1,3 +1,6 @@
+# BARIS 1.1.3
+* Checking for the `http` responses using a `HEAD` method instead of a `GET` which takes too much time on large `CSV` files. 
+
 # BARIS 1.1.2
 * The functions that query data now check for the API response, and if not successful, they return `NULL`.
 

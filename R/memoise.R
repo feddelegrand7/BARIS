@@ -1,7 +1,7 @@
 
 is_response_successfull <- function(url) {
 
-  response <- httr::GET(
+  response <- httr::HEAD(
     url = url
   )
 
