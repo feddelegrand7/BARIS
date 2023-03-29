@@ -38,7 +38,7 @@ resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**.
 
 - The package has been archived from CRAN. I'm in 
 the process of writing a new lightweight wrapper with very few
-dependencies. Indeed, BARIS provided functions to read the date directly into 
+dependencies. Indeed, BARIS provided functions to read the data directly into 
 R however I think, the user should have the flexibility to decide how the data 
 can be read. 
 
