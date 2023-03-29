@@ -36,9 +36,6 @@ resource has this form: **59ea7bba-f38a-4d75-b85f-2d1955050e53**.
 
 ## Installation
 
-You can install the BARIS package from
-[CRAN](https://cran.r-project.org/) with:
-
 - The package has been archived from CRAN. I'm in 
 the process of writing a new lightweight wrapper with very few
 dependencies. Indeed, BARIS provided functions to read the date directly into 
